@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+    margin: 10px;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
@@ -7,28 +7,32 @@
 
 body{
     /* height: 100vh; */
-    /* display: flex; */
+    /* display: flex; 
+    background-color: rgb(242, 244, 247);
+
     /* justify-content: center; */
     /* align-items: center; */
 }
 
 .menu_bar{
-    background-color: #04163f;
+    background-color: #dcf5fd;
+    background-color: #ffffff;
     height: 80px;
     width: 100%; 
     padding: 0 5% ;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
+    
 .logo{
-    color:#e9e9e9;
+    color:#ffffff;
     font-size: 30px;
 }
 
 .logo span{
-    color:#0073ff ;
+    color:#080593 ;
 }
 
 .menu_bar ul{
@@ -43,13 +47,13 @@ body{
 
 .menu_bar ul li a{
     font-size: 20px;
-    color: #e9e9e9;
+    color: #000000;
     text-decoration: none;
     transition: all 0.3s;
 }
 
 .menu_bar ul li a:hover{
-    color: #0073ff;
+    color: #080593;
 }
 
 .dropdown_menu{
@@ -61,8 +65,8 @@ body{
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #04163f;
-    ;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .menu_bar ul li:hover .dropdown_menu ul{
@@ -76,7 +80,8 @@ body{
 }
 .mainbody{
     margin: 30px;
-    background-color: rgb(242, 244, 247);
+    background-color: rgba(238, 247, 249, 0.867);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .mainbody img{
     height: 600px;
@@ -85,12 +90,15 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
 }
 .mainbody .container .centered {
     position: absolute;
-    top: 85%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
   }
 
   .centered{
@@ -102,6 +110,7 @@ body{
     align-items: center; 
     padding: 20px ;
     opacity: 0.6;
+    
   }
 
   .centered >input{
