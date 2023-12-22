@@ -9,7 +9,7 @@ body{
 }
 
 .menu_bar{
-    background-color: #0f1e3c;
+    background-color: #04163f;
     height: 80px;
     width: 100%; 
     padding: 0 5%;
@@ -57,7 +57,8 @@ body{
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #141d28;
+    background-color: #04163f;
+    ;
 }
 
 .menu_bar ul li:hover .dropdown_menu ul{
@@ -71,14 +72,19 @@ body{
 }
 .mainbody{
     margin: 30px;
-    background-color: rgb(209, 230, 249);
+    background-color: rgb(242, 244, 247);
 }
-.hero{
-    height: calc(100vh - 80px);
-    background-image: url(./job-search-process-anthropos.jpeg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+.mainbody img{
+    height: 600px;
+    width: 800px;
+    padding: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-
+.mainbody .container .centered {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
