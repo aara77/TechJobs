@@ -9,7 +9,7 @@ body{
 }
 
 .menu_bar{
-    background-color: #141d28;
+    background-color: #0f1e3c;
     height: 80px;
     width: 100%; 
     /* background: #ffffff;
@@ -71,7 +71,10 @@ body{
     width: 150px;
     padding: 10px;
 }
-
+.mainbody{
+    margin: 30px;
+    background-color: rgb(209, 230, 249);
+}
 .hero{
     height: calc(100vh - 80px);
     background-image: url(./job-search-process-anthropos.jpeg);
@@ -80,3 +83,4 @@ body{
     background-repeat: no-repeat;
 
 }
+
