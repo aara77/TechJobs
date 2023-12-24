@@ -1,5 +1,5 @@
 *{
-    margin: 10px;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
@@ -7,7 +7,7 @@
 
 body{
     height: 100vh;
-    /* display: flex; 
+     /* display: flex;  */
     background-color: rgb(242, 244, 247);
 
     /* justify-content: center; */
@@ -27,7 +27,7 @@ body{
 }
     
 .logo{
-    color:#ffffff;
+    color:#141212;
     font-size: 30px;
 }
 
