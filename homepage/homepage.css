@@ -1,5 +1,5 @@
 *{
-    margin: 10px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
@@ -7,11 +7,11 @@
 
 body{
     height: 100vh;
-    /* display: flex; 
+     /* display: flex;  */
     background-color: rgb(242, 244, 247);
-
-    /* justify-content: center; */
-    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu_bar{
@@ -27,7 +27,7 @@ body{
 }
     
 .logo{
-    color:#ffffff;
+    color:#141212;
     font-size: 30px;
 }
 
@@ -38,11 +38,14 @@ body{
 .menu_bar ul{
     list-style: none;
     display: flex;
+
 }
 
 .menu_bar ul li{
     padding: 10px 30px;
     position: relative;
+
+
 }
 
 .menu_bar ul li a{
@@ -96,24 +99,22 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .mainbody img{
-    height: 600px;
-    width: 800px;
+    width: 100%;
     padding: 50px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
     
 }
 .mainbody .container .centered {
     position: absolute;
-    top: 95%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
   }
 
-  .centered{
+.centered{
     width: 500px;
     height: 30px;
     display: flex;
