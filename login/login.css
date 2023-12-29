@@ -1,8 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Kaushan Script', cursive;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    
     box-sizing: border-box;
 }
 body{
@@ -64,7 +64,7 @@ body{
     font-size: 70px;
     color:white;
     text-align: center;
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .ss-box h2{

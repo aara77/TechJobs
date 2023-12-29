@@ -137,5 +137,30 @@ body{
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
 }
-
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: rgb(219, 239, 245);
+    }
+    .mainbody h1 {
+        font-size: 30px;
+    }
+    .mainbody p{
+        font-size: 16px;
+    }
+    .mainbody .container img{
+        height: 250px;
+        width: 350px;
+        padding: 10px;   
+    }
+    .mainbody .container .centered {
+        top: 61%;
+    }
+    .centered{
+        width: 200px;
+    }
+    .mainbody .feat p{
+        font-size: 30px;
+    }
+    
+}
   
