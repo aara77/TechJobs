@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -10,7 +11,7 @@
 }
 
 :root {
-  --primary: #be8b57;
+  --primary: #bfb1a4;
   --white: #965656;
   --bg: #f5f5f5;
 }
@@ -21,6 +22,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.tranding-slide-content-bottom a{
+  color: #882f2f;
+  text-decoration: underline;
+}
 @media (min-width: 1440px) {
   html {
     zoom: 1.5;
@@ -59,11 +64,11 @@ html {
 
 body {
   font-size: 1.6rem;
-  background: var(--bg);
+  /*background: var(--bg);*/
 }
 
 .container {
-  max-width: 124rem;
+  max-width: 90rem;
   padding: 0 1rem;
   margin: 0 auto;
 }
@@ -119,9 +124,9 @@ body {
 
 .tranding-slide .tranding-slide-img img {
   width: 37rem;
-  height: 42rem;
+  height: 35rem;
   border-radius: 2rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .tranding-slide .tranding-slide-content {
