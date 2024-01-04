@@ -14,80 +14,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-=======
-}
-
-.menu_bar{
-    background-color: #ffffff;
-    height: 80px;
-    width: 100%; 
-    padding: 0 5% ;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-    
-.logo{
-    color:#141212;
-    font-size: 30px;
-}
-
-.logo span{
-    color:#080593 ;
-}
-
-.menu_bar ul{
-    list-style: none;
-    display: flex;
-
-}
-
-.menu_bar ul li{
-    padding: 10px 30px;
-    position: relative;
-
-
-}
-
-.menu_bar ul li a{
-    font-size: 20px;
-    color: #000000;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.menu_bar ul li a:hover{
-    color: #080593;
-}
-
-.dropdown_menu{
-    display: none;
-}
-
-.menu_bar ul li:hover .dropdown_menu{
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #ffffff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.menu_bar ul li:hover .dropdown_menu ul{
-    display: block;
-    margin: 10px;
-}
-
-.menu_bar ul li:hover .dropdown_menu ul li{
-    width: 150px;
->>>>>>> 03f30972da3237471a3032df4a495d26b3babfc6
     padding: 10px;
     /*from yt*/
     line-height: 1.5;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
+	  font-family: 'Raleway', sans-serif;
+	  font-weight: 400;
 }
 body.hidden-scrolling{
 	overflow-y: hidden;
@@ -117,6 +48,7 @@ a{
 	top:0;
 	z-index: 99;
 	padding: 20px;
+  
 }
 .header-main{
 	background-color: #ffffff;
@@ -356,7 +288,7 @@ a{
 /*main body*/  
 .mainbody{
     margin: 45px;
-	margin-top: 100px;
+	  margin-top: 100px;
     background-color: rgba(238, 247, 249, 0.867);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -372,7 +304,6 @@ a{
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
 }
-<<<<<<< HEAD
 .mainbody .background_image img{
 	background-size: cover;
 	height: 80vh;
@@ -381,15 +312,6 @@ a{
 	padding: 50px;
 	margin-left: auto;
     margin-right: auto; 
-=======
-.mainbody img{
-    width: 100%;
-    height: auto;
-    padding: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    
->>>>>>> 03f30972da3237471a3032df4a495d26b3babfc6
 }
 .mainbody .container .centered {
     position: absolute;
@@ -418,7 +340,6 @@ a{
     font-size: 18px;
     padding-left: 10px;
   }
-<<<<<<< HEAD
   
 
 /**responsive for mainbody*/
@@ -454,7 +375,6 @@ a{
     
 }
 /**end of responsive for mainbody*/
-=======
 
 /* slider start */
 .mainbody .feat p{
@@ -773,5 +693,4 @@ ul li a:hover{
 }
 /* footer ends */
 
->>>>>>> 03f30972da3237471a3032df4a495d26b3babfc6
   
