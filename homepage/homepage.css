@@ -18,7 +18,7 @@ body{
     /*from yt*/
     line-height: 1.5;
 	  font-family: 'Raleway', sans-serif;
-	  font-weight: 400;
+	  font-weight: 200;
 }
 body.hidden-scrolling{
 	overflow-y: hidden;
@@ -44,6 +44,7 @@ a{
 .header{
 	position: absolute;
 	width: 100%;
+  
 	left:0;
 	top:0;
 	z-index: 99;
@@ -52,6 +53,8 @@ a{
 }
 .header-main{
 	background-color: #ffffff;
+  width: 1000px
+  ;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -382,7 +385,7 @@ a{
 }
 
 html {
-  font-size: 72.5%;
+  font-size: 40%;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
