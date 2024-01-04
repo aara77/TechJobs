@@ -355,7 +355,8 @@ a{
 		margin-top: 100px;
 	}
     .mainbody h1 {
-        font-size: 30px;rgb(251, 251, 251)
+        font-size: 30px;
+        background-color: rgb(251, 251, 251)
     }
     .mainbody p{
         font-size: 16px;
@@ -371,8 +372,7 @@ a{
     .centered{
         width: 200px;
 		position: fixed;
-    }
-    
+    }   
 }
 /**end of responsive for mainbody*/
 
