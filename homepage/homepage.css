@@ -23,10 +23,7 @@ body{
 body.hidden-scrolling{
 	overflow-y: hidden;
 }
-*{
-	margin:0;
-	box-sizing: border-box;
-}
+
 .container{
 	max-width: 1450px;
 	margin:auto;
@@ -372,18 +369,19 @@ a{
     .centered{
         width: 200px;
 		position: fixed;
-    }   
+    }  
+
 }
 /**end of responsive for mainbody*/
 
 /* slider start */
 .mainbody .feat p{
-    font-size: 50px;
+    font-size: 40px;
 }
 
 html {
   font-size: 72.5%;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   scroll-behavior: smooth;
 }
 
@@ -551,10 +549,49 @@ html {
   
   .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
     background:#9ad5e4;
-  }
-
-  
+  } 
 /* slider ends */
+
+/* new jobs start */
+.browser{
+  padding: 5px 9%;
+  padding-bottom: 100px;
+}
+
+.browser .heading{
+  text-align: center;
+  padding-bottom: 15px;
+  font-size: 50px;
+}
+
+.browser .browser-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+.browser .browser-container .box{
+  border-radius: 5px;
+  background: #c5d7e0;
+  text-align: center;
+  padding: 10px 20px;
+  line-height: 1.8;
+}
+
+.browser .browser-container .box h3{
+  font-size: 25px;
+  padding: 10px 0;
+}
+
+.browser .browser-container .box p{
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.browser .browser-container .box a{
+  font-size: 13px;
+}
+/* new job ends */
 
 /* whyus start   */
 .container1{
@@ -627,16 +664,6 @@ span{
     color: #080593;
     text-transform: capitalize;
 }
-/* 
-.footer-col h4::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    background-color: #111414;
-    height: 2px;
-    width: 40px;
-/* } */
 
 ul li:not(:last-child){
     margin-bottom: 8px;
