@@ -29,7 +29,7 @@ include 'connect.php';
     <div class="container">
        <div class="header-main">
           <div class="logo">
-             <a href="#">TECHJobs</a>
+             <a href="#">TechJobs</a>
           </div>
           <div class="open-nav-menu">
              <span></span>
