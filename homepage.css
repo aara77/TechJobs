@@ -295,7 +295,7 @@ a{
   color: white;
   padding-top: 180px;
 }
-.banner-text h1{
+.mainbody .banner-text h1{
   font-size: 80px;
   font-family: 'Kaushan Script', cursive;
 }
@@ -346,7 +346,7 @@ a{
     background-color: rgba(249, 247, 250, 0.867);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.mainbody h1{
+.mainbody h2{
     text-align: center;
     padding: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -365,7 +365,7 @@ a{
 	display: block;
 	padding: 50px;
 	margin-left: auto;
-    margin-right: auto; 
+  margin-right: auto; 
 }
 .mainbody .container .centered {
     position: absolute;
@@ -432,6 +432,7 @@ a{
 /**end of responsive for mainbody*/
 
 /* slider start */
+
 .mainbody .feat p{
     font-size: 40px;
 }
