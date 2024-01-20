@@ -77,23 +77,19 @@ include 'connect.php';
 
 
     <div class="mainbody">
-    <section id="banner">
-        <div class="banner-text">
-            <h1>TechJobs</h1>
-            <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
-            <div class="banner-button">
-                <a href="login\login.html"><span></span>View Jobs</a>
-                <a href="login\login.html"><span></span>Post Jobs</a>
-            </div>
-        </div>
-    </section>
+       <section id="banner">
+           <div class="banner-text">
+               <h1>TechJobs</h1>
+               <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
+               <div class="banner-button">
+                   <a href="login\login.html"><span></span>View Jobs</a>
+                   <a href="login\login.html"><span></span>Post Jobs</a>
+               </div>
+           </div>
+       </section>
 
-        <h1>Get and Post jobs! </h1>
-        <p>Finding The Right Employee For The Right Employer</p>
         <div class="container">
-            <div class="background_image">
-               <img src="img/js.jpg">
-            </div>
+            
             <div class="centered">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 <input type="text" placeholder="search">
