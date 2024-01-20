@@ -19,7 +19,6 @@ include 'connect.php';
     fontawesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="slider.css">
     <title>TechJobs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +56,7 @@ include 'connect.php';
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
-                      <li class="menu-item"><a href="#">Post Jobs</a></li>
+                      <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
                   </ul>
                </li>
                <li class="menu-item">
@@ -77,19 +76,18 @@ include 'connect.php';
 
 
     <div class="mainbody">
-       <section id="banner">
-           <div class="banner-text">
-               <h1>TechJobs</h1>
-               <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
-               <div class="banner-button">
-                   <a href="login\login.html"><span></span>View Jobs</a>
-                   <a href="login\login.html"><span></span>Post Jobs</a>
-               </div>
-           </div>
-       </section>
+    <section id="banner">
+        <div class="banner-text">
+            <h1>TechJobs</h1>
+            <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
+            <div class="banner-button">
+                <a href="joblist.php"><span></span>View Jobs</a>
+                <a href="login/login.php"><span></span>Post Jobs</a>
+            </div>
+        </div>
+    </section>
 
         <div class="container">
-            
             <div class="centered">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 <input type="text" placeholder="search">
@@ -113,7 +111,7 @@ include 'connect.php';
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
-                               <button class="button" href="">Apply Now</button>
+                               <a href="" class="button">Apply Now</a>
                         </div>
                       </div>
                       <?php
@@ -127,7 +125,7 @@ include 'connect.php';
 
          <!---whyus start-->
            <div class="container1">
-               <h1>Why us</h1>
+               <h1 class="heading">Why us</h1>
               <div class="box-container">
                    <div class="boxs">
                      <div class="font">

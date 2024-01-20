@@ -21,7 +21,7 @@ include 'connect.php';
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="slider.css">
-    <title>TechJobs</title>
+    <title>JobList</title>
 </head>
 
 <body>
@@ -71,34 +71,37 @@ include 'connect.php';
  <script src="homepage.js"></script>
  <!-- header end -->
 
- <!--new job start-->
- <div class="browser">
-               <h1 class="heading">New Jobs</h1>
-                <div class="browser-container">
- 
-                      <?php
-                       if(mysqli_num_rows($result)>0){
-                         while($row = mysqli_fetch_assoc($result)){
-                      ?> 
-           
-                      <div class="box">
-                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                             <img class="img-fluid border rounded" <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>>
-                             <div class="text-start ps-4">
-                                 <h3><?php echo $row['job_name']; ?></h3>
-                                 <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
-                                 <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
-                             </div>
-                               <button class="button" href="">Apply Now</button>
-                        </div>
-                      </div>
-                      <?php
-                         }
-                         }
-                      ?>
-                 </div>
-             </div>
-            <!--new job endss-->
+ <div class="mainbody">
+
+        <!--new job start-->
+        <div class="browser">
+           <h1 class="heading">New Jobs</h1>
+               <div class="browser-container">
+
+                     <?php
+                      if(mysqli_num_rows($result)>0){
+                        while($row = mysqli_fetch_assoc($result)){
+                     ?> 
+         
+                  <div class="box">
+                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                         <img class="img-fluid border rounded" <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>>
+                         <div class="text-start ps-4">
+                             <h3><?php echo $row['job_name']; ?></h3>
+                             <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
+                             <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
+                         </div>
+                           <a href="" class="button">Apply Now</a>
+                    </div>
+                  </div>
+                     <?php
+                        }
+                        }
+                     ?>
+                </div>
+            </div>
+             <!--new job endss-->
+   </div>
 
 
 <!--footer section start-->
