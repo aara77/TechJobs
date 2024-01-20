@@ -21,6 +21,11 @@ include 'connect.php';
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="slider.css">
     <title>TechJobs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +34,7 @@ include 'connect.php';
     <div class="container">
        <div class="header-main">
           <div class="logo">
-             <a href="#">TECHJobs</a>
+             <a href="#">TechJobs</a>
           </div>
           <div class="open-nav-menu">
              <span></span>
@@ -72,6 +77,17 @@ include 'connect.php';
 
 
     <div class="mainbody">
+    <section id="banner">
+        <div class="banner-text">
+            <h1>TechJobs</h1>
+            <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
+            <div class="banner-button">
+                <a href="login\login.html"><span></span>View Jobs</a>
+                <a href="login\login.html"><span></span>Post Jobs</a>
+            </div>
+        </div>
+    </section>
+
         <h1>Get and Post jobs! </h1>
         <p>Finding The Right Employee For The Right Employer</p>
         <div class="container">
