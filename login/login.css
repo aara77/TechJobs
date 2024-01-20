@@ -11,7 +11,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(63, 4, 75, 0.5), #c393ccab),url('job-searching.jpg');
+    background: linear-gradient(rgba(71, 36, 78, 0.5), #cfcdcfab),url('job-searching.jpg');
     background-size: cover;
     background-position: center;
 } 
@@ -113,7 +113,7 @@ body{
 
 .remember{
     font-size: 15px;
-    color: #662d91;
+    color: #1c1324;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -121,14 +121,14 @@ body{
 }
 
 .remember label input{
-    accent-color: #662d91;
+    accent-color: #aa8ebe;
     margin-right: 3px;
 }
 
 .btn{
     width: 100%;
     height: 45px;
-    background: #041535ab;
+    background: #662d91;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -140,14 +140,14 @@ body{
 
 .login-register{
     font-size: 15px;
-    color: #662d91;
+    color: #221a27;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
 .login-register p a{
-    color: #662d91;
+    color: #785096;
     text-decoration: none;
     font-weight: 600;
 }

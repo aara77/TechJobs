@@ -2,6 +2,7 @@
  
 include 'connect.php';
  $query = "select * from job_list";
+ 
  $result = mysqli_query($conn,$query);
 
 ?>
@@ -70,21 +71,8 @@ include 'connect.php';
  <script src="homepage.js"></script>
  <!-- header end -->
 
-
-    <div class="mainbody">
-        <h1>Get and Post jobs! </h1>
-        <p>Finding The Right Employee For The Right Employer</p>
-        <div class="container">
-            <div class="background_image">
-               <img src="img/js.jpg">
-            </div>
-            <div class="centered">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="text" placeholder="search">
-            </div>
-            
-            <!--new job start-->
-            <div class="browser">
+ <!--new job start-->
+ <div class="browser">
                <h1 class="heading">New Jobs</h1>
                 <div class="browser-container">
  
@@ -109,47 +97,9 @@ include 'connect.php';
                          }
                       ?>
                  </div>
-                 <a href="joblist.php" class="btn">Browse more jobs</a>
              </div>
             <!--new job endss-->
 
-         <!---whyus start-->
-           <div class="container1">
-               <h1>Why us</h1>
-              <div class="box-container">
-                   <div class="boxs">
-                     <div class="font">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                     </div>
-                       <h3>User-Friendly Interface</h3>
-                       <p>Easier to navigate through job listings
-                           and manage your job search.
-                       </p>
-                   </div>
-               
-                   <div class="boxs">
-                       <div class="font">
-                          <i class="fa fa-lock" aria-hidden="true"></i>
-                       </div>
-                       <h3>Maintained Privacy</h3>
-                       <p> Reserve all your skills, achievements, and experience private. 
-                       </p>
-                   </div>
-                
-                   <div class="boxs">
-                       <div class="font">
-                          <i class="fa fa-building" aria-hidden="true"></i>
-                       </div>
-                       <h3>Company Information</h3>
-                       <p> Detailed information about the hiring companies, 
-                           including their culture and employee reviews.
-                       </p>
-                     </div>
-                 </div>
-             </div>
-        <!--whyus end-->
-
-    </div>
 
 <!--footer section start-->
 <footer>
