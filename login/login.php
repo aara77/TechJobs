@@ -1,3 +1,37 @@
+<?php
+include 'connect.php';
+if (isset($_POST['rsubmit'])){
+  $rusername=$_POST['rusername'];
+  $remail=$_POST['remail'];
+  $rpassword=$_POST['rpassword'];
+
+  $sql = " INSERT INTO registered_datas(username,email,password)
+  VALUES ('$rusername','$remail','$rpassword')
+  ";
+  $rresult = mysqli_query($conn,$sql);
+  if(!$rresult){
+    echo "data insertion problem";
+  }
+}
+if (isset($_POST['lsubmit'])){
+
+  $lemail=$_POST['lemail'];
+  $lpassword=$_POST['lpassword'];
+
+  $sql= "SELECT * FROM registered_data where email='$lemail' AND password='$lpassword'";
+  $lresult= mysqli_query($conn,$sql);
+  $num=mysqli_num_rows($lresult);
+
+  if($num==1){
+    session_start();
+    $_SESSION['login']=true;
+    header('location:\Melomixx\HOMEPAGE\homepage.php');
+  
+  }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +47,7 @@
      <div class="wrapper">      
          <div class="ss-box ">
             <h2>Login</h2>
-            <!-- <form action="<?php $_SERVER['PHP_SELF']?>" method="POST"> -->
+            <form action="<?php $_SERVER['PHP_SELF']?>" method="POST"> 
                <div class="inbox">
                  <span class="icon"><ion-icon name="mail"></ion-icon></span>
                  <input type="email" name="lemail">

@@ -62,7 +62,7 @@ a{
 .header .logo a{
 	font-size: 30px;
 	text-transform: capitalize;
-	color: #e91e63;
+	color: #662d91;
 	font-weight: 600;
 }
 .header .nav-menu{
@@ -105,14 +105,14 @@ a{
 }
 .header .menu > .menu-item:hover > a .plus:before,
 .header .menu > .menu-item:hover > a .plus:after{
-   background-color: #e91e63;
+   background-color: #662d91;
 }
 .header .menu > .menu-item > a .plus:after{
    transform: translate(-50%,-50%) rotate(-90deg);	
 }
 .header .menu > .menu-item > .sub-menu > .menu-item > a:hover,
 .header .menu > .menu-item:hover > a{
-	color: #e91e63;
+	color: #662d91;
 }
 .header .menu > .menu-item > .sub-menu{
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -122,7 +122,7 @@ a{
 	top:100%;
 	background-color: #ffffff;
 	padding: 10px 0;
-	border-top: 3px solid #e91e63;
+	border-top: 3px solid #662d91;
 	transform: translateY(10px);
 	transition: all 0.3s ease;
 	opacity:0;
@@ -283,39 +283,86 @@ a{
 /*end of responsive for header */
 
 /* for mainbody */
-.mainbody{
-    margin: 45px;
-	  margin-top: 100px;
-    background-color: rgba(238, 247, 249, 0.867);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+/*** About ***/
+.about-bg {
+    background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+    background-image: -o-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+    background-size: 5px 5px;
 }
 
+.team-member {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid  rgb(161, 133, 161) ;
+    border-radius: 5px;
+}
 
+.team-member:hover{
+    border:2px solid rgb(182, 108, 182) ;
+}
+.team-member h2 {
+    margin-bottom: 5px;
+}
 
-  .containerr {
-    width: 100%;
-    margin: auto;
-    padding: 40px 50px;
+.team-member p {
+    margin-bottom: 10px;
+}
+
+.text-start{
+	text-align: left;
   }
-  h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
+  
+  .text-start span{
+	color:#353535;
   }
-  h2 {
-    margin-bottom: 1rem;
+  .text-start span i{
+	color: #7b5996;  /*for icons*/
   }
-  p {
-    margin-bottom: 1.5rem;
+  
+  .me-3{
+	margin-right: 1rem;
+	font-size: 14px;
   }
-  ul {
-    list-style: none;
-    padding: 0;
+  
+  .ps-4{
+	padding-left: 1.5rem;
   }
-  .containerr li::before {
-    content: "•";
-    margin-right: 0.5rem;
-    color: #007bff;
+  .mb-4 {
+    margin-bottom: 1.5rem !important
+}
+  
+  .text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
   }
+  
+  .img-fluid {
+	max-width: 100%;
+	height: auto;
+	margin-top: 18px ;
+	margin-bottom: 18px;
+  }
+  
+  .d-flex {
+	display: flex !important
+  }
+  @media (min-width: 768px) {
+  .col-md-8 {
+	flex: 0 0 auto;
+	width: 66.66667%
+  }
+  }
+  @media (min-width: 576px) {
+  .col-sm-12 {
+	flex: 0 0 auto;
+	width: 100%
+  }
+  }
+
   
   /* footer start */
 footer{
@@ -331,7 +378,7 @@ ul{
 }
 
 span{
-    color: #080593;
+    color: #662d91;
 }
 
 .footer-col{
@@ -343,7 +390,7 @@ span{
     margin-bottom: 30px;
     font-weight: 400;
     font-size: 22px;
-    color: #080593;
+    color: #662d91;
     text-transform: capitalize;
 }
 
@@ -361,7 +408,7 @@ ul li a{
 }
 
 ul li a:hover{
-    color: #080593;
+    color: #662d91;
     padding-left: 5px;
 }
 
@@ -370,7 +417,7 @@ ul li a:hover{
     height: 44px;
     width: 44px;
     color: white;
-    background-color: rgba(40, 130, 214, 0.8);
+    background-color: #662d91;
     margin: 0 8px 8px 0;
     text-align: center;
     line-height: 44px;
@@ -379,7 +426,7 @@ ul li a:hover{
 }
 
 .links a:hover{
-    color: #080593;
+    color: #662d91;
     background-color: white;
 }
 

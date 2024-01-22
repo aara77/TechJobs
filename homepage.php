@@ -17,63 +17,61 @@ $result = mysqli_query($conn, $query);
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/
     fontawesome.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="homepage.css">
-  <link rel="stylesheet" href="slider.css">
-  <title>TechJobs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="homepage.css">
+    <title>TechJobs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- header start -->
   <header class="header">
     <div class="container">
-      <div class="header-main">
-        <div class="logo">
-          <a href="#">TechJobs</a>
-        </div>
-        <div class="open-nav-menu">
-          <span></span>
-        </div>
-        <div class="menu-overlay">
-        </div>
-        <!-- navigation menu start -->
-        <nav class="nav-menu">
-          <div class="close-nav-menu">
-            <img src="img/close.svg" alt="close">
+       <div class="header-main">
+          <div class="logo">
+             <a href="#">TechJobs</a>
           </div>
-          <ul class="menu">
-            <li class="menu-item menu-item-has-children">
-              <a href="homepage.php">Home</a>
-            </li>
-            <li class="menu-item">
-              <a href="/aboutus/aboutus.html">About</a>
-            </li>
-            <li class="menu-item menu-item-has-children">
-              <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
-              <ul class="sub-menu">
-                <li class="menu-item"><a href="#">View Jobs</a></li>
-                <li class="menu-item"><a href="#">Post Jobs</a></li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="#">News</a>
-            </li>
-            <li class="menu-item">
-              <a href="login/login.html">Login/Register</a>
-            </li>
-          </ul>
-        </nav>
-        <!-- navigation menu end -->
-      </div>
+          <div class="open-nav-menu">
+             <span></span>
+          </div>
+          <div class="menu-overlay">
+          </div>
+          <!-- navigation menu start -->
+          <nav class="nav-menu">
+            <div class="close-nav-menu">
+               <img src="img/close.svg" alt="close">
+            </div>
+            <ul class="menu">
+               <li class="menu-item menu-item-has-children">
+                              <a href="homepage.php">Home</a>
+               </li>
+               <li class="menu-item">
+                  <a href="aboutus/aboutus.html">About</a>
+               </li>
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
+                      <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
+                  </ul>
+               </li>
+               <li class="menu-item">
+                  <a href="#">News</a>
+               </li>
+               <li class="menu-item">
+                  <a href="login/login.php">Login/Register</a>
+               </li>
+            </ul>
+          </nav>
+          <!-- navigation menu end -->
+       </div>
     </div>
-  </header>
-  <script src="homepage.js"></script>
+ </header>
+ <script src="homepage.js"></script>
   <!-- header end -->
   <div class="mainbody">
     <section id="banner">
@@ -81,147 +79,19 @@ $result = mysqli_query($conn, $query);
         <h1>TechJobs</h1>
         <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
         <div class="banner-button">
-          <a href="login\login.html"><span></span>View Jobs</a>
-          <a href="login\login.html"><span></span>Post Jobs</a>
+          <a href="login\login.php"><span></span>View Jobs</a>
+          <a href="login\login.php"><span></span>Post Jobs</a>
         </div>
       </div>
     </section>
 
-    <!--h2>Get and Post jobs! </h2>
-    <p>Finding The Right Employee For The Right Employer</p-->
-    <div class="container">
-      <!--div class="background_image">
-        <img src="img/jobsphoto.png">
-      </div-->
-      <div class="centered">
-        <i class="fa fa-search" aria-hidden="true"></i>
-        <input type="text" placeholder="search">
-      </div>
-      <!--slider start-->
-      <div class="feat">
-        
-        <section id="tranding">
-          <p>Featured IT Jobs</p>
-          <div class="container">
-            <div class="swiper tranding-slider">
-              <div class="swiper-wrapper">
-
-                <!-- Slide-start -->
-                <div class="swiper-slide tranding-slide">
-                  <div class="tranding-slide-img">
-                    <img src="img/eb pearls.png" alt="Tranding">
-                  </div>
-                  <div class="tranding-slide-content">
-                    <a href="https://ebpearls.com.au/">
-                      <div class="tranding-slide-content-bottom">
-                        <h2 class="company-name">
-                          EB Pearls Nepal
-                        </h2>
-                        <h3 class="job-name">
-                          <span>Web Devloper</span>
-                        </h3>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide-end -->
-
-              <!-- Slide-start -->
-              <div class="swiper-slide tranding-slide">
-                <div class="tranding-slide-img">
-                  <img src="img/cedargate.jpg" alt="Tranding">
-                </div>
-                <div class="tranding-slide-content">
-                  <div class="tranding-slide-content-bottom">
-                    <h2 class="company-name">
-                      Cedar Gate Technologies
-                    </h2>
-                    <h3 class="job-name">
-                      <span>Cloud Engineer</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide-end -->
-
-              <!-- Slide-start -->
-              <div class="swiper-slide tranding-slide">
-                <div class="tranding-slide-img">
-                  <img src="img/f1soft.png" alt="Tranding">
-                </div>
-                <div class="tranding-slide-content">
-                  <div class="tranding-slide-content-bottom">
-                    <h2 class="company-name">
-                      F1 Soft International
-                    </h2>
-                    <h3 class="job-name">
-                      <span>UX Designer</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide-end -->
-
-              <!-- Slide-start -->
-              <div class="swiper-slide tranding-slide">
-                <div class="tranding-slide-img">
-                  <img src="img/infodev.jpg" alt="Tranding">
-                </div>
-                <div class="tranding-slide-content">
-                  <div class="tranding-slide-content-bottom">
-                    <h2 class="company-name">
-                      InfoDevelopers Nepal
-                    </h2>
-                    <h3 class="job-name">
-                      <span>Business Analyst</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide-end -->
-
-              <!-- Slide-start -->
-              <div class="swiper-slide tranding-slide">
-                <div class="tranding-slide-img">
-                  <img src="img/leapfrog.png" alt="Tranding">
-                </div>
-                <div class="tranding-slide-content">
-                  <div class="tranding-slide-content-bottom">
-                    <h2 class="company-name">
-                      Leapfrog Technology
-                    </h2>
-                    <h3 class="job-name">
-                      <span>IT Manager</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Slide-end -->
-
-
+        <div class="container">
+            <div class="centered">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" placeholder="search">
             </div>
+            
 
-            <div class="tranding-slider-control">
-              <div class="swiper-button-prev slider-arrow">
-                <ion-icon name="arrow-back-outline"></ion-icon>
-              </div>
-              <div class="swiper-button-next slider-arrow">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-
-          </div>
-      </div>
-      </section>
-
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      <script src="slider.js"></script>
-
-    </div>
-    <!--slider ends-->
 
     <!--new job start-->
     <div class="browser">
