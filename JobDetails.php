@@ -102,7 +102,9 @@ mysqli_close($conn);
       </div>
     </section>
     </div>
+    <h1 class="heading"><?php echo $row['company_name']; ?></h1>
     <div class="container2">
+    
       <div class="box1">
         <h1>Company's Decription</h1>
         <div class="companylogo">
@@ -127,6 +129,7 @@ mysqli_close($conn);
         </div>
       </div>
     </div>
+    <h1 class="heading">Apply Now</h1>
     <div class="container3">
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="name">Your Name:</label>

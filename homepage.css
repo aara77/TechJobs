@@ -282,7 +282,7 @@ a{
 }
 /*end of responsive for header */
 #banner{
-  background-image: linear-gradient(rgba(107, 93, 255, 0.5), #20303b),
+  background-image: linear-gradient(rgba(33, 2, 55, 0.5), #20303b),
   url("img/bg1.webp");
   background-size: cover;
   background-position: center;
@@ -347,13 +347,7 @@ a{
     background-color: rgba(249, 247, 250, 0.867);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-/* .mainbody h1{
-    text-align: center;
-    padding: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 40px;
 
-} */
 .mainbody p{
     text-align: center;
     font-size: x-large;

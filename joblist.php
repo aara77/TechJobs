@@ -20,7 +20,8 @@ include 'connect.php';
     fontawesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="joblist.css">
+
     <title>JobList</title>
 </head>
 
@@ -72,7 +73,18 @@ include 'connect.php';
  <!-- header end -->
 
  <div class="mainbody">
-
+ <div class="container1">
+    <section id="banner">
+      <div class="banner-text">
+        <h1>JobDetails</h1>
+        <p>Choose a job that fuels your passion and watch your daily efforts turn into a fulfilling journey.</p>
+        <div class="banner-button">
+          <a href="homepage.php"><span></span>Home</a>
+          <a href="joblist.php"><span></span>Job Lists</a>
+        </div>
+      </div>
+    </section>
+    </div>
         <!--new job start-->
         <div class="browser">
            <h1 class="heading">New Jobs</h1>
@@ -91,7 +103,8 @@ include 'connect.php';
                              <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                              <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                          </div>
-                           <a href="" class="button">Apply Now</a>
+                         <a href="JobDetails.php?jobId=<?php echo $row['job_id']; ?>" class="button">Apply Now</a>
+                           <!-- <a href="" class="button">Apply Now</a> -->
                     </div>
                   </div>
                      <?php
