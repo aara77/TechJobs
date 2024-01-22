@@ -56,14 +56,17 @@ include 'connect.php';
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
-                      <li class="menu-item"><a href="#">Post Jobs</a></li>
+                      <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
                   </ul>
                </li>
                <li class="menu-item">
                   <a href="#">News</a>
                </li>
-               <li class="menu-item">
-                  <a href="login/login.php">Login/Register</a>
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="logout.php">logout</a></li>
+                  </ul>
                </li>
             </ul>
           </nav>

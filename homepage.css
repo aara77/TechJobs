@@ -401,10 +401,9 @@ a{
 		margin: 20px;
 		margin-top: 100px;
 	}
-    .mainbody h1 {
+    /* .mainbody h1 {
         font-size: 30px;
-        background-color: rgb(251, 251, 251)
-    }
+    } */
     .mainbody p{
         font-size: 16px;
     }
@@ -441,22 +440,22 @@ a{
   font-size: 20px;
 }
 
+
 .inbox input{
   font-size: 20px;
 }
 
-.postbox .submit{
+.submit{
   border: none;
-  color: white;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin:4px 2px;
-  cursor: pointer;
-  background-color: #662d91;
-}
+    color: white;
+    padding: 19px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 30px 50px 490px;
+    cursor: pointer;
+    background-color: #662d91;
+    /* position:relative; */
+  }
 
 
 /* new jobs start */
