@@ -7,7 +7,7 @@ include 'connect.php';
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -91,15 +91,15 @@ include 'connect.php';
                              <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                              <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                          </div>
-                           <a href="JobDetails.php?jobId=<?php echo $row['job_id']; ?>" class="button">Apply Now</a>
-
-                           <!--a href="" class="button">Apply Now</a-->
+                           <a href="" class="button">Apply Now</a>
                     </div>
                   </div>
                      <?php
                         }
                         }
                      ?>
+
+                   
                 </div>
             </div>
              <!--new job endss-->

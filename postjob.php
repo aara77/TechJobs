@@ -1,3 +1,7 @@
+<?php
+include("connect.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +38,7 @@
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                  <a href="homepage.php">Home</a>
+                  <a href="admin.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>
@@ -50,7 +54,7 @@
                   <a href="#">News</a>
                </li>
                <li class="menu-item">
-                  <a href="login/login.php">Login/Register</a>
+                  <a href="">Welcome</a>
                </li>
             </ul>
           </nav>
@@ -64,21 +68,50 @@
  <div class="mainbody">
      <h1 class="heading"> Post A Job </h1>
      <div class="postbox">
-        <div class="inbox">
-          <label>Company Name:</label>
-          <input type="text" name="cname"><br>
-        </div>
-        <div class="inbox">
-          <label>Company Address:</label>
-          <input type="text" name="caddress"><br>
-        </div>
-        <div class="inbox">
-          <label>Select your Company Logo:</label>
-          <input type="file" id="myfile" name="myfile"><br><br>
-        </div>
-        <div class="submit">
-        <a href="#" class="submit">Submit</a>
-        </div>
+        <form action="" method="POST">
+            <div class="inbox">
+               <label>Job Name:</label>
+               <input type="text" name="jname" required><br>
+             </div>
+             <div class="inbox">
+               <label>Company Name:</label>
+               <input type="text" name="cname" required><br>
+             </div>
+             <div class="inbox">
+               <label>Company Address:</label>
+               <input type="text" name="caddress" required><br>
+             </div>
+             <div class="inbox">
+               <label>Company logo:</label>
+               <input type="file" name="clogo" required><br>
+             </div>
+              <div class="inbox"> 
+               <label>Company Description:</label><br>
+               <textarea id="description" name="des" rows="5" cols="60" > </textarea>
+             </div>
+             <input type="submit" name="submit" class="submit" value="Submit">
+             
+        </form> 
+
+        <?php
+        if(isset($_POST['submit'])){
+
+         $jname=$_POST['jname'];
+         $cname=$_POST['cname'];
+         $caddress=$_POST['caddress'];
+         $clogo=$_POST['clogo'];
+         $des=$_POST['des'];
+         $result=mysqli_query($conn,"insert into job_list values('','$jname', '$cname', '$caddress', '$clogo', '$des')");
+
+         if($result){
+            echo"sucess";
+         }
+         else{
+            echo "failed";
+          }
+        }
+
+        ?>
       </div>
 </div>
 

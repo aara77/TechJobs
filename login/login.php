@@ -18,14 +18,15 @@ if (isset($_POST['lsubmit'])){
   $lemail=$_POST['lemail'];
   $lpassword=$_POST['lpassword'];
 
-  $sql= "SELECT * FROM registered_data where email='$lemail' AND password='$lpassword'";
+  $sql= "SELECT * FROM registered_datas where email='$lemail' AND password='$lpassword'";
   $lresult= mysqli_query($conn,$sql);
   $num=mysqli_num_rows($lresult);
 
   if($num==1){
     session_start();
+    $_SESSION['user_name']=$rusername;
     $_SESSION['login']=true;
-    header('location:\Melomixx\HOMEPAGE\homepage.php');
+    header('location:\TechJobs\admin.php');
   
   }
 }
@@ -50,12 +51,12 @@ if (isset($_POST['lsubmit'])){
             <form action="<?php $_SERVER['PHP_SELF']?>" method="POST"> 
                <div class="inbox">
                  <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                 <input type="email" name="lemail">
+                 <input type="email" name="lemail" required>
                  <label>Email</label>
                </div>
                <div class="inbox">
                  <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                 <input type="password" name="lpassword">
+                 <input type="password" name="lpassword" required>
                  <label>Password</label>
                </div>
               <div class="remember">
@@ -73,17 +74,17 @@ if (isset($_POST['lsubmit'])){
             <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
              <div class="inbox">
                <span class="icon"> <ion-icon name="person"></ion-icon> </span>             
-               <input type="text" name="rusername">
+               <input type="text" name="rusername" required>
                <label>Username</label>
              </div>
              <div class="inbox">
                <span class="icon"><ion-icon name="mail"></ion-icon></span>
-               <input type="email" name="remail">
+               <input type="email" name="remail" required>
                <label>Email</label>
              </div>
              <div class="inbox">
                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-               <input type="password" name="rpassword">
+               <input type="password" name="rpassword" required>
                <label>Password</label>
              </div>
             <div class="remember-forgot">

@@ -106,6 +106,7 @@ mysqli_close($conn);
       <div class="box1">
         <h1>Company's Decription</h1>
         <div class="companylogo">
+          
           <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 200px; height: 200px; padding:10px; margin-left: 10px;" '; ?>>
           <!--img src="img\eb pearls.png" alt=""-->
         </div>
