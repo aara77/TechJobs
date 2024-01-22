@@ -85,11 +85,11 @@ include 'connect.php';
          
                   <div class="box">
                     <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                         <img class="img-fluid border rounded" <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['clogo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>>
+                         <img class="img-fluid border rounded" <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>>
                          <div class="text-start ps-4">
-                             <h3><?php echo $row['jname']; ?></h3>
-                             <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['cname']; ?></span>
-                             <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['caddress']; ?></span>
+                             <h3><?php echo $row['job_name']; ?></h3>
+                             <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
+                             <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                          </div>
                            <a href="" class="button">Apply Now</a>
                     </div>
