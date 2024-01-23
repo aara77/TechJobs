@@ -124,7 +124,6 @@ mysqli_close($conn);
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Published On:</li>
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Vacancy: 123 Position</li>
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Job Nature: <?php echo $row['shift']; ?></li>
-          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Location: </li>
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Date Line: 01 Jan, 2045</li>
         </div>
       </div>

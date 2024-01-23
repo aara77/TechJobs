@@ -1,4 +1,11 @@
-#banner {
+
+.mainbody {
+	margin: 45px;
+	margin-top: 100px;
+	background-color: rgba(249, 247, 250, 0.867);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#banner1 {
 	background-image: linear-gradient(rgba(33, 2, 55, 0.5), #061f30),
 		url("img/eorkplace.jpg");
 	background-size: cover;
@@ -8,29 +15,30 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-.banner-text {
+.banner1-txt {
 	text-align: left;
 	margin-left: 85px;
 	color: white;
 	padding-top: 120px;
 }
 
-.mainbody .banner-text h1 {
+.mainbody .banner1-txt h1 {
 	font-size: 40px;
 	font-family: 'Kaushan Script', cursive;
 }
 
-.banner-text p {
+.banner1-txt p {
 	font-size: 20px;
+	margin-left: 85px;
 	font-style: italic;
 	font-family: 'Poppins', sans-serif;
 }
 
-.banner-button {
+.banner-btn {
 	margin: 25px auto 0;
 }
 
-.banner-button a {
+.banner-btn a {
 	height: 40px;
 	width: 80px;
 	text-decoration: none;
@@ -47,7 +55,7 @@
 	transition: color 0.5s;
 }
 
-.banner-button a span {
+.banner-btn a span {
 	width: 0;
 	height: 100%;
 	position: absolute;
@@ -58,11 +66,19 @@
 	transition: 0.5s;
 }
 
-.banner-button a:hover span {
+.banner-btn a:hover span {
 	width: 100%;
 
 }
 
-.banner-button a:hover {
+.banner-btn a:hover {
 	color: #000;
+}
+.mainbody .heading {
+	text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 50px;
+	color: #662d91;
+    font-family: 'Kaushan Script', cursive;
 }

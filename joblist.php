@@ -21,6 +21,11 @@ include 'connect.php';
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="joblist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
 
     <title>JobList</title>
 </head>
@@ -73,12 +78,12 @@ include 'connect.php';
  <!-- header end -->
 
  <div class="mainbody">
- <div class="container1">
-    <section id="banner">
-      <div class="banner-text">
-        <h1>JobDetails</h1>
+ <div class="containerr">
+    <section id="banner1">
+      <div class="banner1-txt">
+        <h1>Job Lists</h1>
         <p>Choose a job that fuels your passion and watch your daily efforts turn into a fulfilling journey.</p>
-        <div class="banner-button">
+        <div class="banner-btn">
           <a href="homepage.php"><span></span>Home</a>
           <a href="joblist.php"><span></span>Job Lists</a>
         </div>

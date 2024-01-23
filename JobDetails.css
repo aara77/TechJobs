@@ -486,7 +486,7 @@ textarea {
 	margin-bottom: 16px;
 	padding: 10px;
 	box-sizing: border-box;
-	border: 1px solid #ccc;
+	border: 1px solid #8a4baf;
 	border-radius: 4px;
 }
 label {
@@ -498,6 +498,10 @@ label {
 .container3 textarea {
 	resize: vertical;
 	min-height: 100px;
+}
+.container3 input:focus, .container3 textarea:focus {
+    border: 2px solid #8a4baf; /* Change the border color on focus to the same color as before */
+    outline: none; /* Remove the default outline (commonly a blue border) on focus */
 }
 .container3 button {
 	background-color: #662d91;

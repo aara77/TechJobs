@@ -36,7 +36,13 @@ if(isset($_POST['submit'])){
     fontawesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
-    <title>PostJob</title>
+    <link rel="stylesheet" href="postjob.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <title>TechJobs</title>
 </head>
 
 <body>
@@ -87,6 +93,17 @@ if(isset($_POST['submit'])){
  <!-- header end -->
 
  <div class="mainbody">
+ <section id="banner1">
+      <div class="banner1-txt">
+        <h1>Post Jobs</h1>
+        <p>
+"Empower your company's future by posting jobs on our website and handpicking the perfect candidate to shape success together. Your next great hire is just a click away."</p>
+        <div class="banner-btn">
+          <a href="homepage.php"><span></span>Home</a>
+          <a href="joblist.php"><span></span>Job Lists</a>
+        </div>
+      </div>
+    </section>
      <h1 class="heading"> Post A Job </h1>
      <div class="postbox">
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
@@ -100,7 +117,19 @@ if(isset($_POST['submit'])){
              </div>
              <div class="inbox">
                <label>Company Address:</label>
-               <input type="text" name="company_address" required autocomplete="off"><br>
+               <input type="text" name="caddress" required><br>
+             </div>
+             <div class="inbox">
+               <label>Vacancy:</label>
+               <input type="number" name="caddress" required><br>
+             </div>
+             <div class="inbox">
+               <label>Job Nature:</label>
+               <input type="text" name="caddress" required><br>
+             </div>
+             <div class="inbox">
+               <label>Date Line:</label>
+               <input type="date" name="caddress" required><br>
              </div>
              <div class="inbox">
                <label>Company logo:</label>
@@ -111,7 +140,8 @@ if(isset($_POST['submit'])){
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
             
-             <input type="submit" name="submit" class="submit" value="Submit">
+             <button type="submit">Submit</button>
+             <!-- <input type="submit" name="submit" class="submit" value="Submit"> -->
              
         </form> 
 

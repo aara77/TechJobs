@@ -1,0 +1,137 @@
+.mainbody .heading {
+	text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 50px;
+	color: #662d91;
+    font-family: 'Kaushan Script', cursive;
+}
+#banner1 {
+	background-image: linear-gradient(rgba(33, 2, 55, 0.5), #061f30),
+		url("img/post.png");
+	background-size: cover;
+	background-position: center;
+	height: 400px;
+	font-family: 'Kaushan Script', cursive;
+	font-family: 'Poppins', sans-serif;
+}
+
+.banner1-txt {
+	text-align: left;
+	margin-left: 85px;
+	color: white;
+	padding-top: 120px;
+}
+
+.mainbody .banner1-txt h1 {
+	font-size: 40px;
+	font-family: 'Kaushan Script', cursive;
+}
+
+.banner1-txt p {
+	font-size: 20px;
+	margin-left: 85px;
+	font-style: italic;
+	font-family: 'Poppins', sans-serif;
+}
+
+.banner-btn {
+	margin: 25px auto 0;
+}
+
+.banner-btn a {
+	height: 40px;
+	width: 80px;
+	text-decoration: none;
+	font-size: 20px;
+	font-style: italic;
+	font-family: 'Kaushan Script', cursive;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 3px 0;
+	color: white;
+	border: .5px solid #fff;
+	position: relative;
+	z-index: 1;
+	transition: color 0.5s;
+}
+
+.banner-btn a span {
+	width: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff;
+	z-index: -1;
+	transition: 0.5s;
+}
+
+.banner-btn a:hover span {
+	width: 100%;
+
+}
+
+.banner-btn a:hover {
+	color: #000;
+}
+.mainbody .postbox{
+    max-width: 600px;
+	margin: 50px auto 20px;
+	background-color: #fdfaff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+}
+.mainbody .postbox form{
+    max-width: 400px;
+	margin: 20px auto;
+}
+.postbox .inbox{
+	margin-bottom: 2px;
+}
+.postbox label{
+    display: block;
+	margin-bottom: 8px;
+    text-align: left; 
+    font-weight: bold; 
+}
+.postbox input, textarea{
+    width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #8a4baf;
+	border-radius: 4px;
+}
+label {
+    font-weight: bold;
+}
+.postbox textarea{
+    resize: vertical;
+	min-height: 100px;
+}
+.postbox .submit{
+    background-color: #662d91;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.postbox button{
+    background-color: #662d91;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.postbox button:hover{
+    background-color: #b356fa;
+}
+.postbox input:focus, .postbox textarea:focus {
+    border: 2px solid #8a4baf; /* Change the border color on focus to the same color as before */
+    outline: none; /* Remove the default outline (commonly a blue border) on focus */
+}
