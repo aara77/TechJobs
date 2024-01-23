@@ -1,7 +1,7 @@
 <?php
- 
+
 include 'connect.php';
- $query = "select * from job_list limit 5";
+ $query = "select * from job_list ";
  $result = mysqli_query($conn,$query);
 
 ?>
@@ -25,6 +25,12 @@ include 'connect.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <style>
+        h2{
+            color:#662d91;
+            text-align:center;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,7 +53,7 @@ include 'connect.php';
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                  <a href="homepage.php">Home</a>
+                              <a href="homepage.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>
@@ -56,7 +62,7 @@ include 'connect.php';
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
-                      <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
+                      <li class="menu-item"><a href="#">Post Jobs</a></li>
                   </ul>
                </li>
                <li class="menu-item">
@@ -76,31 +82,22 @@ include 'connect.php';
     </div>
  </header>
  <script src="homepage.js"></script>
- <!-- header end -->
-
-
-    <div class="mainbody">
-    <section id="banner">
-        <div class="banner-text">
-            <h1>TechJobs</h1>
-            <p>“In the middle of difficulty lies opportunity.” —Albert Einstein</p>
-            <div class="banner-button">
-                <a href="joblist.php"><span></span>View Jobs</a>
-                <a href="login/login.php"><span></span>Post Jobs</a>
-            </div>
-        </div>
-    </section>
-
-        <div class="container">
-            <div class="centered">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="text" placeholder="search">
-            </div>
-            
-            <!--new job start-->
+  <!-- header end -->
+  <div class="mainbody">
+            <!--update/delete start-->
             <div class="browser">
-               <h1 class="heading">New Jobs</h1>
+               <h1 class="heading">Job lists
+                   <a href="postjob.php" class="btn float-end">Add Job</a>
+               </h1>
                 <div class="browser-container">
+            
+            
+           <?php
+           if(isset($_GET['delete_msg'])){
+            echo "<h2>".$_GET['delete_msg']."</h2>";
+           }
+
+           ?>
  
                       <?php
                        if(mysqli_num_rows($result)>0){
@@ -115,102 +112,18 @@ include 'connect.php';
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
-                               <a href="" class="button">Apply Now</a>
+                             <a href="update.php?updateId=<?php echo $row['job_id']; ?>" class="button1">Update</a>
+                             <a href="delete.php?deleteId=<?php echo $row['job_id']; ?>" class="button2">Delete</a>
+                               <!-- <a href="" class="button">Apply Now</a> -->
                         </div>
                       </div>
                       <?php
                          }
                          }
                       ?>
-                 </div>
-                 <a href="joblist.php" class="btn">Browse more jobs</a>
+                </div>
+                 <!-- <a href="joblist.php" class="btn">Browse more jobs</a> -->
              </div>
-            <!--new job endss-->
+           </div>
+            <!--update/delete endss-->
 
-         <!---whyus start-->
-           <div class="container1">
-               <h1 class="heading">Why us</h1>
-              <div class="box-container">
-                   <div class="boxs">
-                     <div class="font">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                     </div>
-                       <h3>User-Friendly Interface</h3>
-                       <p>Easier to navigate through job listings
-                           and manage your job search.
-                       </p>
-                   </div>
-               
-                   <div class="boxs">
-                       <div class="font">
-                          <i class="fa fa-lock" aria-hidden="true"></i>
-                       </div>
-                       <h3>Maintained Privacy</h3>
-                       <p> Reserve all your skills, achievements, and experience private. 
-                       </p>
-                   </div>
-                
-                   <div class="boxs">
-                       <div class="font">
-                          <i class="fa fa-building" aria-hidden="true"></i>
-                       </div>
-                       <h3>Company Information</h3>
-                       <p> Detailed information about the hiring companies, 
-                           including their culture and employee reviews.
-                       </p>
-                     </div>
-                 </div>
-             </div>
-        <!--whyus end-->
-
-    </div>
-
-<!--footer section start-->
-<footer>
-    <div class="footer-col">
-            <h1>Tech<span>Jobs</span></h1>
-    </div>
-
-    <div class="footer-col">
-       <h4>For Jobseeker</h4>
-        <ul>
-           <li><a href="login/login.php">Register</a></li>
-           <li><a href="#">Search Jobs</a></li>
-           <li><a href="login/login.php">Login</a></li>
-           <li><a href="#">FAQ</a></li>
-        </ul>          
-    </div>       
-
-    <div class="footer-col">
-       <h4>For Employer</h4>
-       <ul>
-          <li><a href="login/login.php">Register</a></li>
-          <li><a href="#">Post a Job</a></li>
-          <li><a href="/login/login.php">Login</a></li>
-          <li><a href="#">FAQ</a></li>
-       </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>About Us</h4>
-      <ul>
-         <li><a href="/aboutus/aboutus.html">About TechJob</a></li>
-         <li><a href="#">Life at TechJob</a></li>
-         <li><a href="#">Blogs</a></li>
-         <li><a href="#">FAQs</a></li>
-      </ul> 
-    </div>
-
-    <div class="footer-col">
-       <h4>Follow us</h4>
-       <div class="links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-        </div>
-    </div>   
-</footer>
-<!---footer section ends-->
-
-</body>
-</html>

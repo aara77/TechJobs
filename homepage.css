@@ -116,7 +116,7 @@ a{
 }
 .header .menu > .menu-item > .sub-menu{
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
-	width: 220px;
+	width: 120px;
 	position: absolute;
 	left:0;
 	top:100%;
@@ -419,10 +419,12 @@ a{
 
 /**for post a job*/
 .mainbody .heading{
-  font-size: 40px;
+  color:#662d91;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 50px;
   font-family: 'Kaushan Script', cursive;
-  padding-bottom: 40px;
 }
 
 .postbox .inbox{
@@ -497,7 +499,6 @@ a{
   cursor: pointer;
   background-color: #662d91;
   position: absolute;
-
 }
 
 .browser .browser-container .box:hover{
@@ -645,6 +646,34 @@ border: none;
 }
 
 /* whyus ends */
+ 
+/*update/delete start */
+.button2{
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 950px;
+  cursor: pointer;
+  background-color: rgb(223, 42, 42);
+  position: absolute; 
+}
+
+.button1{
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 800px;
+  cursor: pointer;
+  background-color: #662d91;
+  position: absolute;
+}
+
+
+
 
 /* footer start */
 footer{

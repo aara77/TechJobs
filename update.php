@@ -1,26 +1,36 @@
 <?php
 include("connect.php");
 
+$query = "select * from job_list ";
+$result = mysqli_query($conn,$query);
 
-if(isset($_POST['submit'])){
 
- $job_name=$_POST['job_name'];
- $company_name=$_POST['company_name'];
- $company_address=$_POST['company_address'];
- $company_logo=base64_encode(file_get_contents($_FILES['main_image']["tmp_name"]));
- $des=$_POST['des'];
+if(isset($_POST['update'])){
+    if(isset($_GET['updateId'])){
+        $idnew = $_GET['updateId'];
+    }
 
- $sql="INSERT INTO job_list(job_name,company_name,company_address,company_logo,des)
- VALUES ('$job_name', '$company_name', '$company_address', '$company_logo', '$des')";
- $result=mysqli_query($conn,$sql);
+    // $jobs_id=$_POST['jobs_id'];
+    $job_name=$_POST['job_name'];
+    $company_name=$_POST['company_name'];
+    $company_address=$_POST['company_address'];
+    $company_logo=$_POST['company_logo'];
+    $des=$_POST['des'];
+   
+    $sql="UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address', company_logo='$company_logo',des='$des'
+       WHERE job_id= $idnew";
+    $result=mysqli_query($conn,$sql);
+   
+    if(!$result){
+        die("query failed".mysqli_error());
+    }
+    else{
+        header('location:profile.php?update_msg=Job Updated Sucessfully');
+   }
+      
+    }
+   
 
- if($result){
-   // move_uploaded_file($_FILES["company_logo"]["tmp_name"],"img/".$_FILES['company_logo']['name']);
-   session_start();
-   $_SESSION['message'] = "Job added successfully";
-   // header("Location:")
- }
-}
 ?>
 
 <!DOCTYPE html>
@@ -89,31 +99,50 @@ if(isset($_POST['submit'])){
  <div class="mainbody">
      <h1 class="heading"> Post A Job </h1>
      <div class="postbox">
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
+
+        <?php
+        if(isset($_GET['updateId'])){
+            $updateId = $_GET['updateId'];
+          
+            $query =" SELECT * FROM job_list WHERE job_id=$updateId";
+            $result = mysqli_query($conn, $query);
+
+            if(!$result){
+                die("query failed".mysqli_error());
+            }
+            else{
+                $row = mysqli_fetch_assoc($result);
+            }
+        }        
+        ?>
+
+
+        <form action="update.php?updateId=<?php echo $job_id; ?>" method="POST">
             <div class="inbox">
-               <label>Job Post:</label>
-               <input type="text" name="job_name" required autocomplete="off"><br>
+               <label>Job Name:</label>
+               <input type="text" name="job_name"  value="<?php echo $row['job_name']; ?>"required autocomplete="off"><br>
              </div>
              <div class="inbox">
                <label>Company Name:</label>
-               <input type="text" name="company_name"  required autocomplete="off"><br>
+               <input type="text" name="company_name" value=" <?php echo $row['company_name']; ?>"  required autocomplete="off"><br>
              </div>
              <div class="inbox">
                <label>Company Address:</label>
-               <input type="text" name="company_address" required autocomplete="off"><br>
+               <input type="text" name="company_address" value="<?php echo $row['company_address'];  ?>" required autocomplete="off"><br>
              </div>
              <div class="inbox">
                <label>Company logo:</label>
-               <input type="file" name="company_logo" required autocomplete="off"><br>
+               <input type="file" name="company_logo" value="<?php echo $row['company_logo'];?>" required><br>
              </div>
               <div class="inbox"> 
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
-            
-             <input type="submit" name="submit" class="submit" value="Submit">
+             
+             <input type="submit" name="update" class="submit" value="Update">
              
         </form> 
+
 
       </div>
 </div>

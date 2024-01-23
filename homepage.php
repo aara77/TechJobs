@@ -20,10 +20,10 @@ include 'connect.php';
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
     <title>TechJobs</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 
@@ -110,16 +110,16 @@ include 'connect.php';
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
                              <a href="JobDetails.php?jobId=<?php echo $row['job_id']; ?>" class="button">Apply Now</a>
-                               <!-- <a href="" class="button">Apply Now</a> -->
                         </div>
                       </div>
                       <?php
                          }
                          }
                       ?>
-                 </div>
+                </div>
                  <a href="joblist.php" class="btn">Browse more jobs</a>
              </div>
+           </div>
             <!--new job endss-->
 
     <!---whyus start-->
