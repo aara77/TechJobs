@@ -1,5 +1,6 @@
 <?php
 include("connect.php");
+session_start();
 
 
 if(isset($_POST['submit'])){
@@ -7,18 +8,27 @@ if(isset($_POST['submit'])){
  $job_name=$_POST['job_name'];
  $company_name=$_POST['company_name'];
  $company_address=$_POST['company_address'];
- $company_logo=base64_encode(file_get_contents($_FILES['main_image']["tmp_name"]));
- $des=$_POST['des'];
+ $company_logo=$_FILES['company_logo']['name'];
 
+//  $company_logo=base64_encode(file_get_contents($_FILES['company_logo']["tmp_name"]));
+//  $company_logo=mysqli_real_escape_string($conn,$company_logo);
+ $des=$_POST['des'];
+echo "checking";
  $sql="INSERT INTO job_list(job_name,company_name,company_address,company_logo,des)
  VALUES ('$job_name', '$company_name', '$company_address', '$company_logo', '$des')";
  $result=mysqli_query($conn,$sql);
 
  if($result){
-   // move_uploaded_file($_FILES["company_logo"]["tmp_name"],"img/".$_FILES['company_logo']['name']);
-   session_start();
-   $_SESSION['message'] = "Job added successfully";
-   // header("Location:")
+   // echo "file uploaded";
+   move_uploaded_file($_FILES["company_logo"]["tmp_name"],"image/".$_FILES['company_logo']['name']);
+   
+   $_SESSION['status'] = "Job added successfully";
+   header("Location:joblist.php");
+ }
+ else{
+   $_SESSION['status'] = "Job not added successfully";
+   header("Location:joblist.php");
+
  }
 }
 ?>
@@ -80,8 +90,13 @@ if(isset($_POST['submit'])){
                <li class="menu-item">
                   <a href="#">News</a>
                </li>
-               <li class="menu-item">
-                  <a href="">Welcome</a>
+               
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="logout.php">Logout</a></li>
+                      <li class="menu-item"><a href="profile.php">Profile</a></li>
+                  </ul>
                </li>
             </ul>
           </nav>
@@ -97,7 +112,7 @@ if(isset($_POST['submit'])){
       <div class="banner1-txt">
         <h1>Post Jobs</h1>
         <p>
-"Empower your company's future by posting jobs on our website and handpicking the perfect candidate to shape success together. Your next great hire is just a click away."</p>
+             "Empower your company's future by posting jobs on our website and handpicking the perfect candidate to shape success together. Your next great hire is just a click away."</p>
         <div class="banner-btn">
           <a href="homepage.php"><span></span>Home</a>
           <a href="joblist.php"><span></span>Job Lists</a>
@@ -106,6 +121,21 @@ if(isset($_POST['submit'])){
     </section>
      <h1 class="heading"> Post A Job </h1>
      <div class="postbox">
+
+      <?php
+      if(isset($_SESSION['status']) && $_SESSION != ''){
+      ?>
+         <div class="alert">
+          <strong>hey</strong><?php
+         echo $_SESSION['status'];
+         ?>
+        </div>
+        <?php
+         unset($_SESSION['status']);
+      }
+
+      ?>
+        
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
             <div class="inbox">
                <label>Job Post:</label>
@@ -117,9 +147,9 @@ if(isset($_POST['submit'])){
              </div>
              <div class="inbox">
                <label>Company Address:</label>
-               <input type="text" name="caddress" required><br>
+               <input type="text" name="company_address" required><br>
              </div>
-             <div class="inbox">
+             <!-- <div class="inbox">
                <label>Vacancy:</label>
                <input type="number" name="caddress" required><br>
              </div>
@@ -130,17 +160,19 @@ if(isset($_POST['submit'])){
              <div class="inbox">
                <label>Date Line:</label>
                <input type="date" name="caddress" required><br>
-             </div>
+             </div> -->
              <div class="inbox">
                <label>Company logo:</label>
-               <input type="file" name="company_logo" required autocomplete="off"><br>
+               <input type="file" name="company_logo" required autocomplete="off" accept="image/*"><br>
              </div>
               <div class="inbox"> 
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
             
-             <button type="submit">Submit</button>
+             <!-- <input type="submit" >Submit</input> -->
+             <button type="submit" class="submit1"value="submit">Submit</button>
+            
              <!-- <input type="submit" name="submit" class="submit" value="Submit"> -->
              
         </form> 

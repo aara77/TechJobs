@@ -1,36 +1,59 @@
-<?php
+
+ <?php
+// Include the database connection file (e.g., connect.php)
 include("connect.php");
 
-$query = "select * from job_list ";
-$result = mysqli_query($conn,$query);
+// Check if the form is submitted for updating
+if(isset($_POST['update'])) {
+    // Get the job ID from the form
+    $job_id = $_POST['job_id'];
+    
+    // Retrieve other form data
+    $job_name = $_POST['job_name'];
+    $company_name = $_POST['company_name'];
+    $company_address = $_POST['company_address'];
+    $company_logo_old = $_POST['company_logo_old'];
+    $company_logo = $_FILES['company_logo']['name'];
+    $des = $_POST['des'];
 
-
-if(isset($_POST['update'])){
-    if(isset($_GET['updateId'])){
-        $idnew = $_GET['updateId'];
+    // Check if a new company logo is uploaded
+    if(!empty($company_logo)) {
+        // Upload the new company logo
+        $target_dir = "image/";
+        $target_file = $target_dir . basename($_FILES["company_logo"]["name"]);
+        move_uploaded_file($_FILES["company_logo"]["tmp_name"], $target_file);
+        // Use $company_logo as the updated logo filename
+        $update_filename = $company_logo;
+    } else {
+        // Use the existing logo filename
+        $update_filename = $company_logo_old;
     }
 
-    // $jobs_id=$_POST['jobs_id'];
-    $job_name=$_POST['job_name'];
-    $company_name=$_POST['company_name'];
-    $company_address=$_POST['company_address'];
-    $company_logo=$_POST['company_logo'];
-    $des=$_POST['des'];
-   
-    $sql="UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address', company_logo='$company_logo',des='$des'
-       WHERE job_id= $idnew";
-    $result=mysqli_query($conn,$sql);
-   
-    if(!$result){
-        die("query failed".mysqli_error());
-    }
-    else{
-        header('location:profile.php?update_msg=Job Updated Sucessfully');
-   }
-      
-    }
-   
+    // Update the job record in the database
+    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address', company_logo='$update_filename', des='$des' WHERE job_id=$job_id";
 
+    if(mysqli_query($conn, $sql)) {
+        // Redirect to the profile page after successful update
+        header("Location: /Techjobs/profile.php");
+        exit();
+    } else {
+        // Handle query errors
+        echo "Error updating record: " . mysqli_error($conn);
+    }
+}
+
+// If the job ID is provided in the URL, fetch the job details for editing
+if(isset($_GET['job_id'])) {
+    $job_id = $_GET['job_id'];
+    $query = "SELECT * FROM job_list WHERE job_id=$job_id";
+    $result = mysqli_query($conn, $query);
+
+    if(!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    } else {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +69,7 @@ if(isset($_POST['update'])){
     fontawesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="postjob.css">
     <title>PostJob</title>
 </head>
 
@@ -84,8 +108,13 @@ if(isset($_POST['update'])){
                <li class="menu-item">
                   <a href="#">News</a>
                </li>
-               <li class="menu-item">
-                  <a href="">Welcome</a>
+               
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="logout.php">Logout</a></li>
+                      <li class="menu-item"><a href="profile.php">Profile</a></li>
+                  </ul>
                </li>
             </ul>
           </nav>
@@ -97,14 +126,15 @@ if(isset($_POST['update'])){
  <!-- header end -->
 
  <div class="mainbody">
+  
      <h1 class="heading"> Post A Job </h1>
      <div class="postbox">
 
         <?php
-        if(isset($_GET['updateId'])){
-            $updateId = $_GET['updateId'];
+        if(isset($_GET['job_id'])){
+            $job_id = $_GET['job_id'];
           
-            $query =" SELECT * FROM job_list WHERE job_id=$updateId";
+            $query =" SELECT * FROM job_list WHERE job_id=$job_id";
             $result = mysqli_query($conn, $query);
 
             if(!$result){
@@ -113,11 +143,12 @@ if(isset($_POST['update'])){
             else{
                 $row = mysqli_fetch_assoc($result);
             }
-        }        
-        ?>
+         ?>
 
 
-        <form action="update.php?updateId=<?php echo $job_id; ?>" method="POST">
+        <form action="update.php?job_id=<?php echo $job_id; ?>" method="POST" enctype ="multipart/form-data">
+             <input type="hidden" name="job_id" value="<?php echo $row['job_id'];  ?>">
+             
             <div class="inbox">
                <label>Job Name:</label>
                <input type="text" name="job_name"  value="<?php echo $row['job_name']; ?>"required autocomplete="off"><br>
@@ -132,16 +163,23 @@ if(isset($_POST['update'])){
              </div>
              <div class="inbox">
                <label>Company logo:</label>
-               <input type="file" name="company_logo" value="<?php echo $row['company_logo'];?>" required><br>
+               <input type="file" name="company_logo"  required><br>
+               <input type="hidden" name="company_logo_old" value="<?php echo $row['company_address'];  ?>">
              </div>
-              <div class="inbox"> 
+              <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 150px; height: 150px; margin-left:100px;">
+                
+             <div class="inbox"> 
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
              
-             <input type="submit" name="update" class="submit" value="Update">
+             <!-- <input type="reset" name="update" class="submit" value="Update"> -->
+             <button type="submit" name="update" value="update">Update</button>
              
         </form> 
+        <?php
+           }        
+           ?>
 
 
       </div>
