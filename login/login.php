@@ -6,8 +6,7 @@ if (isset($_POST['rsubmit'])){
   $rpassword=$_POST['rpassword'];
 
   $sql = " INSERT INTO registered_datas(username,email,password)
-  VALUES ('$rusername','$remail','$rpassword')
-  ";
+  VALUES ('$rusername','$remail','$rpassword') ";
   $rresult = mysqli_query($conn,$sql);
   if(!$rresult){
     echo "data insertion problem";
@@ -47,6 +46,7 @@ if (isset($_POST['lsubmit'])){
             <h1>TechJobs</h1>
      <div class="wrapper">      
          <div class="ss-box ">
+      
             <h2>Login</h2>
             <form action="<?php $_SERVER['PHP_SELF']?>" method="POST"> 
                <div class="inbox">
