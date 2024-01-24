@@ -118,8 +118,8 @@ include("connect.php");
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
-             <button type="submit">Submit</button>
-             <!-- <input type="submit" name="submit" class="submit" value="Submit"> -->
+             <!-- <button type="submit">Submit</button> -->
+             <input type="submit" name="submit" class="submit" value="Submit">
              
         </form> 
 
