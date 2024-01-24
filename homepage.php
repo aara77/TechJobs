@@ -55,7 +55,7 @@ include 'connect.php';
                <li class="menu-item menu-item-has-children">
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
-                      <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
+                      <li class="menu-item"><a href="#">View Jobs</a></li>
                       <li class="menu-item"><a href="#">Post Jobs</a></li>
                   </ul>
                </li>
@@ -109,7 +109,7 @@ include 'connect.php';
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
-                             <a href="JobDetails.php?jobId=<?php echo $row['job_id']; ?>" class="button">Apply Now</a>
+                             <a href="login/login.php" class="button">Apply Now</a>
                         </div>
                       </div>
                       <?php

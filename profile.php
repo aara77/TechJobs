@@ -1,8 +1,14 @@
 <?php
 
+session_start();
+
 include 'connect.php';
+
+
+
  $query = "select * from job_list ";
  $result = mysqli_query($conn,$query);
+
 
 ?>
 
