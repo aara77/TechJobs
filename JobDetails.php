@@ -17,9 +17,40 @@ if (isset($_GET['jobId'])) {
 } else {
 echo "Job ID not provided.";
 }
+mysqli_close($conn); 
+?>
 
-mysqli_close($conn);
-   
+<?php
+include 'connect.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    
+    // Process file upload
+    $cvFileName = $_FILES['cv']['name'];
+    $cvTmpName = $_FILES['cv']['tmp_name'];
+    $cvFileSize = $_FILES['cv']['size'];
+    $cvFileType = $_FILES['cv']['type'];
+    $cvContent = file_get_contents($cvTmpName);
+    
+    $coverLetter = $_POST['coverLetter'];
+    
+    // Prepare and execute SQL query
+    $stmt = $conn->prepare("INSERT INTO apply_job (name, email, cv, cover_letter) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssbs", $name, $email, $cvContent, $coverLetter);
+    
+    if ($stmt->execute()) {
+        echo "Application submitted successfully";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +94,7 @@ mysqli_close($conn);
           </div>
           <ul class="menu">
             <li class="menu-item menu-item-has-children">
-              <a href="homepage.php">Home</a>
+              <a href="admin.php">Home</a>
             </li>
             <li class="menu-item">
               <a href="/aboutus/aboutus.html">About</a>
@@ -71,16 +102,21 @@ mysqli_close($conn);
             <li class="menu-item menu-item-has-children">
               <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
               <ul class="sub-menu">
-                <li class="menu-item"><a href="#">View Jobs</a></li>
-                <li class="menu-item"><a href="#">Post Jobs</a></li>
+                <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
+                <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
               </ul>
             </li>
             <li class="menu-item">
               <a href="#">News</a>
             </li>
-            <li class="menu-item">
-              <a href="login/login.html">Login/Register</a>
-            </li>
+            
+            <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="logout.php">Logout</a></li>
+                      <li class="menu-item"><a href="profile.php">Profile</a></li>
+                  </ul>
+               </li>
           </ul>
         </nav>
         <!-- navigation menu end -->
@@ -109,8 +145,8 @@ mysqli_close($conn);
         <h1>Company's Decription</h1>
         <div class="companylogo">
           
-          <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 200px; height: 200px; padding:10px; margin-left: 10px;" '; ?>>
-          <!--img src="img\eb pearls.png" alt=""-->
+        <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 180px; height: 180px; margin-left:50px;">
+                        <!--img src="img\eb pearls.png" alt=""-->
         </div>
         <div class="details">
           <li><i class="fa fa-briefcase"></i> <?php echo $row['company_name']; ?></li>

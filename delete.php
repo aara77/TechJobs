@@ -1,16 +1,14 @@
 <?php
     include 'connect.php';
     if(isset($_GET['deleteId'])){
-        $deleteId=$_GET['deleteId'];
+        $dId=$_GET['deleteId'];
 
-        $query="DELETE FROM job_list WHERE job_id = '$deleteId' ";
+        $query="DELETE FROM job_list WHERE job_id = '$dId' ";
         $result = mysqli_query($conn,$query);
 
         if($result){
-            // session_start();
-            // $_SESSION['message'] = "Job Deleted Successfully";
-            header('location:profile.php?delete_msg=Job Deleted Successfully');
-            // exit(0);
+            // echo"Deleted Successfully";
+            header('location:profile.php');
         }
         else{
             die("Query Failed".mysqli_error($conn));

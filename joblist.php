@@ -50,7 +50,7 @@ include 'connect.php';
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                  <a href="homepage.php">Home</a>
+                  <a href="admin.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>
@@ -59,14 +59,19 @@ include 'connect.php';
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
-                      <li class="menu-item"><a href="#">Post Jobs</a></li>
+                      <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
                   </ul>
                </li>
                <li class="menu-item">
                   <a href="#">News</a>
                </li>
-               <li class="menu-item">
-                  <a href="login/login.php">Login/Register</a>
+               
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="logout.php">Logout</a></li>
+                      <li class="menu-item"><a href="profile.php">Profile</a></li>
+                  </ul>
                </li>
             </ul>
           </nav>
@@ -102,8 +107,8 @@ include 'connect.php';
          
                   <div class="box">
                     <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                         <img class="img-fluid border rounded" <?php echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>>
-                         <div class="text-start ps-4">
+                    <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 80px; height: 80px;">
+                              <div class="text-start ps-4">  
                              <h3><?php echo $row['job_name']; ?></h3>
                              <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                              <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
@@ -117,7 +122,7 @@ include 'connect.php';
                         }
                      ?>
 
-                   
+                    
                 </div>
             </div>
              <!--new job endss-->
