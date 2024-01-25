@@ -12,8 +12,9 @@ if(isset($_POST['update'])) {
     $job_name = $_POST['job_name'];
     $company_name = $_POST['company_name'];
     $company_address = $_POST['company_address'];
-    $company_logo_old = $_POST['company_logo_old'];
+
     $company_logo = $_FILES['company_logo']['name'];
+    $company_logo_old = $_POST['company_logo_old'];
     $des = $_POST['des'];
 
     // Check if a new company logo is uploaded
@@ -54,7 +55,7 @@ if(isset($_GET['job_id'])) {
         $row = mysqli_fetch_assoc($result);
     }
 }
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -130,22 +131,6 @@ if(isset($_GET['job_id'])) {
      <h1 class="heading"> Post A Job </h1>
      <div class="postbox">
 
-        <?php
-        if(isset($_GET['job_id'])){
-            $job_id = $_GET['job_id'];
-          
-            $query =" SELECT * FROM job_list WHERE job_id=$job_id";
-            $result = mysqli_query($conn, $query);
-
-            if(!$result){
-                die("query failed".mysqli_error());
-            }
-            else{
-                $row = mysqli_fetch_assoc($result);
-            }
-         ?>
-
-
         <form action="update.php?job_id=<?php echo $job_id; ?>" method="POST" enctype ="multipart/form-data">
              <input type="hidden" name="job_id" value="<?php echo $row['job_id'];  ?>">
              
@@ -163,7 +148,7 @@ if(isset($_GET['job_id'])) {
              </div>
              <div class="inbox">
                <label>Company logo:</label>
-               <input type="file" name="company_logo"  required><br>
+               <input type="file" name="company_logo" required><br>
                <input type="hidden" name="company_logo_old" value="<?php echo $row['company_address'];  ?>">
              </div>
               <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 150px; height: 150px; margin-left:100px;">
@@ -176,10 +161,7 @@ if(isset($_GET['job_id'])) {
              <!-- <input type="reset" name="update" class="submit" value="Update"> -->
              <button type="submit" name="update" value="update">Update</button>
              
-        </form> 
-        <?php
-           }        
-           ?>
+        </form>
 
 
       </div>

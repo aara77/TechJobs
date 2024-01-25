@@ -169,11 +169,9 @@ echo "checking";
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
+         
             
-             <!-- <input type="submit" >Submit</input> -->
-             <button type="submit" class="submit1"value="submit">Submit</button>
-            
-             <!-- <input type="submit" name="submit" class="submit" value="Submit"> -->
+             <input type="submit" name="submit" class="submit1" value="Submit">
              
         </form> 
 
