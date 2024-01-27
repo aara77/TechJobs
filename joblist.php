@@ -36,7 +36,7 @@ include 'connect.php';
     <div class="container">
        <div class="header-main">
           <div class="logo">
-             <a href="#">TECHJobs</a>
+             <a href="admin.php">TECHJobs</a>
           </div>
           <div class="open-nav-menu">
              <span></span>
@@ -90,7 +90,7 @@ include 'connect.php';
         <p>Choose a job that fuels your passion and watch your daily efforts turn into a fulfilling journey.</p>
         <div class="banner-btn">
           <a href="homepage.php"><span></span>Home</a>
-          <a href="joblist.php"><span></span>Job Lists</a>
+          <a href="postjob.php"><span></span>Post Job</a>
         </div>
       </div>
     </section>

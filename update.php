@@ -15,6 +15,7 @@ if(isset($_POST['update'])) {
 
     $company_logo = $_FILES['company_logo']['name'];
     $company_logo_old = $_POST['company_logo_old'];
+    $vacancy = $_POST['vacancy'];
     $des = $_POST['des'];
 
     // Check if a new company logo is uploaded
@@ -31,7 +32,7 @@ if(isset($_POST['update'])) {
     }
 
     // Update the job record in the database
-    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address', company_logo='$update_filename', des='$des' WHERE job_id=$job_id";
+    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address',vacancy='$vacancy', des='$des' WHERE job_id=$job_id";
 
     if(mysqli_query($conn, $sql)) {
         // Redirect to the profile page after successful update
@@ -146,13 +147,25 @@ if(isset($_GET['job_id'])) {
                <label>Company Address:</label>
                <input type="text" name="company_address" value="<?php echo $row['company_address'];  ?>" required autocomplete="off"><br>
              </div>
-             <div class="inbox">
+             <!-- <div class="inbox">
                <label>Company logo:</label>
                <input type="file" name="company_logo" required><br>
                <input type="hidden" name="company_logo_old" value="<?php echo $row['company_address'];  ?>">
              </div>
               <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 150px; height: 150px; margin-left:100px;">
-                
+                 -->
+             <div class="inbox">
+               <label>Vacancy:</label>
+               <input type="number" name="vacancy" value="<?php echo $row['company_address'];  ?>" required><br>
+             </div>
+             <div class="inbox">
+               <label>Job Nature:</label>
+               <input type="text" name="caddress" required><br>
+             </div>
+             <div class="inbox">
+               <label>Date Line:</label>
+               <input type="date" name="caddress" required><br>
+             </div>
              <div class="inbox"> 
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
