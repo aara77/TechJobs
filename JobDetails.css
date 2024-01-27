@@ -132,7 +132,7 @@ a {
 
 .header .menu>.menu-item>.sub-menu {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	width: 220px;
+	width: 120px;
 	position: absolute;
 	left: 0;
 	top: 100%;
@@ -530,7 +530,7 @@ ul {
 }
 
 span {
-	color: #080593;
+	color: #662d91;
 }
 
 .footer-col {
@@ -542,7 +542,7 @@ span {
 	margin-bottom: 30px;
 	font-weight: 400;
 	font-size: 22px;
-	color: #080593;
+	color: #662d91;
 	text-transform: capitalize;
 }
 
@@ -560,7 +560,7 @@ ul li a {
 }
 
 ul li a:hover {
-	color: #080593;
+	color: #662d91;
 	padding-left: 5px;
 }
 
@@ -569,7 +569,7 @@ ul li a:hover {
 	height: 44px;
 	width: 44px;
 	color: white;
-	background-color: rgba(40, 130, 214, 0.8);
+	background-color:#662d91;
 	margin: 0 8px 8px 0;
 	text-align: center;
 	line-height: 44px;
@@ -578,7 +578,7 @@ ul li a:hover {
 }
 
 .links a:hover {
-	color: #080593;
+	color: #662d91;
 	background-color: white;
 }
 

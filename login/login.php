@@ -62,8 +62,9 @@ if (isset($_POST['lsubmit'])){
               <div class="remember">
                  <label><input type="checkbox">Remember me</label>
               </div>
-              <input type="submit" name="lsubmit" class="btn" value="Login">
-             <div class="login-register">
+              <a href="JobDetails.php?jobId=<?php echo $row['job_id']; ?>"><input type="submit" name="lsubmit" class="btn" value="Login"></a>
+              
+            <div class="login-register">
                   <p>Dont have an account?<a href="#" class="register-link">Register</a></p>
               </div>  
             </form> 
