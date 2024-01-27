@@ -92,6 +92,7 @@ include 'connect.php';
   <div class="mainbody">
             <!--update/delete start-->
             <div class="browser">
+               
                <h1 class="heading">jobs
                    <a href="postjob.php" class="btn float-end">Add Job</a>
                </h1>
@@ -112,8 +113,9 @@ include 'connect.php';
            
                       <div class="box">
                         <div class="col-sm-12 col-md-8 d-flex align-items-center">
+
                              <!-- <img class="img-fluid border rounded"  echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>> -->
-                             <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 80px; height: 80px;">
+                             <img class ="img-fluid border rounded" img src= "image/<?php echo $row['company_logo']; ?>"alt="img" style="width: 80px; height: 80px;">
                              <div class="text-start ps-4">
                                  <h3><?php echo $row['job_name']; ?></h3>
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>

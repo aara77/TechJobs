@@ -151,7 +151,7 @@ echo "checking";
              </div>
              <!-- <div class="inbox">
                <label>Vacancy:</label>
-               <input type="number" name="company_address" required><br>
+               <input type="number" name="caddress" required><br>
              </div>
              <div class="inbox">
                <label>Job Nature:</label>
@@ -169,9 +169,9 @@ echo "checking";
                <label>Company Description:</label><br>
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
-            
-             <!-- <button type="submit">Submit</button> -->
-             <input type="submit" name="submit" class="submit" value="Submit">
+         
+             <button type="submit" name="submit" class="submit1" value="Submit">Submit</button>
+             <!-- <input type="submit" name="submit" class="submit1" value="Submit"> -->
              
         </form> 
 
