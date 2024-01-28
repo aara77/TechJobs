@@ -4,6 +4,7 @@ session_start();
 
 
 if(isset($_POST['submit'])){
+   echo "checking"; 
 
  $job_name=$_POST['job_name'];
  $company_name=$_POST['company_name'];
@@ -13,9 +14,10 @@ if(isset($_POST['submit'])){
 //  $company_logo=base64_encode(file_get_contents($_FILES['company_logo']["tmp_name"]));
 //  $company_logo=mysqli_real_escape_string($conn,$company_logo);
  $des=$_POST['des'];
-echo "checking";
- $sql="INSERT INTO job_list(job_name,company_name,company_address,company_logo,des)
- VALUES ('$job_name', '$company_name', '$company_address', '$company_logo', '$des')";
+ $vacancy=$_POST['vacancy'];
+ $shift=$_POST['shift'];
+ $sql="INSERT INTO job_list(job_name,company_name,company_address,company_logo,des,vacancy,shift)
+ VALUES ('$job_name', '$company_name', '$company_address', '$company_logo', '$des', '$vacancy', '$shift' )";
  $result=mysqli_query($conn,$sql);
 
  if($result){
@@ -149,16 +151,16 @@ echo "checking";
                <label>Company Address:</label>
                <input type="text" name="company_address" required><br>
              </div>
-             <!-- <div class="inbox">
+             <div class="inbox">
                <label>Vacancy:</label>
-               <input type="number" name="caddress" required><br>
-             </div>
+               <input type="number" name="vacancy" required><br>
+             </div> 
              <div class="inbox">
                <label>Job Nature:</label>
-               <input type="text" name="caddress" required><br>
+               <input type="text" name="shift" required><br>
              </div>
              <div class="inbox">
-               <label>Date Line:</label>
+               <!--<label>Date Line:</label>
                <input type="date" name="caddress" required><br>
              </div> -->
              <div class="inbox">
@@ -170,8 +172,8 @@ echo "checking";
                <textarea id="description" name="des" rows="5" cols="60" > </textarea>
              </div>
          
-             <button type="submit" name="submit" class="submit1" value="Submit">Submit</button>
-             <!-- <input type="submit" name="submit" class="submit1" value="Submit"> -->
+            <!-- <button type="submit"  name="submit" value="Submit" class="submit1" >Submit</button> -->
+             <input type="submit" name="submit" class="submit1" value="Submit">
              
         </form> 
 
