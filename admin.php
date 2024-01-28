@@ -3,6 +3,7 @@
 include 'connect.php';
  $query = "select * from job_list limit 5";
  $result = mysqli_query($conn,$query);
+ session_start();
 
 ?>
 
@@ -63,7 +64,9 @@ include 'connect.php';
                   <a href="#">News</a>
                </li>
                <li class="menu-item menu-item-has-children">
-                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <a href="#" data-toggle="sub-menu">
+                     Welcome, <?php echo $_SESSION['user_name']; ?>
+                     <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="logout.php">Logout</a></li>
                       <li class="menu-item"><a href="profile.php">Profile</a></li>

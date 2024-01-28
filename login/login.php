@@ -14,19 +14,22 @@ if (isset($_POST['rsubmit'])){
 }
 if (isset($_POST['lsubmit'])){
 
-  $lemail=$_POST['lemail'];
+  $lusername=$_POST['lusername'];
   $lpassword=$_POST['lpassword'];
 
-  $sql= "SELECT * FROM registered_datas where email='$lemail' AND password='$lpassword'";
+  $sql= "SELECT * FROM registered_datas where username='$lusername' AND password='$lpassword'";
   $lresult= mysqli_query($conn,$sql);
   $num=mysqli_num_rows($lresult);
 
   if($num==1){
     session_start();
-    $_SESSION['user_name']=$rusername;
+    $_SESSION['user_name']=$lusername;
     $_SESSION['login']=true;
     header('location:\TechJobs\admin.php');
   
+  }
+  else{
+    echo "Please enter correct information";
   }
 }
 ?>
@@ -49,11 +52,11 @@ if (isset($_POST['lsubmit'])){
       
             <h2>Login</h2>
             <form action="<?php $_SERVER['PHP_SELF']?>" method="POST"> 
-               <div class="inbox">
-                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                 <input type="email" name="lemail" required>
-                 <label>Email</label>
-               </div>
+            <div class="inbox">
+               <span class="icon"> <ion-icon name="person"></ion-icon> </span>             
+               <input type="text" name="lusername" required>
+               <label>Username</label>
+             </div>
                <div class="inbox">
                  <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                  <input type="password" name="lpassword" required>

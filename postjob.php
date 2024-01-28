@@ -2,22 +2,28 @@
 include("connect.php");
 session_start();
 
+$user = $_SESSION['user_name'];
+// echo $user;
+  $query = mysqli_query($conn,"SELECT * FROM registered_datas WHERE username = '$user'");
+ $row = mysqli_fetch_array($query);
+ $id = $row['user_id'];
+
 
 if(isset($_POST['submit'])){
    echo "checking"; 
 
  $job_name=$_POST['job_name'];
+//  $id =$_POST['user_id'];
  $company_name=$_POST['company_name'];
  $company_address=$_POST['company_address'];
  $company_logo=$_FILES['company_logo']['name'];
 
 //  $company_logo=base64_encode(file_get_contents($_FILES['company_logo']["tmp_name"]));
 //  $company_logo=mysqli_real_escape_string($conn,$company_logo);
- $des=$_POST['des'];
- $vacancy=$_POST['vacancy'];
- $shift=$_POST['shift'];
- $sql="INSERT INTO job_list(job_name,company_name,company_address,company_logo,des,vacancy,shift)
- VALUES ('$job_name', '$company_name', '$company_address', '$company_logo', '$des', '$vacancy', '$shift' )";
+ $descrip=$_POST['descrip'];
+
+ $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,descrip)
+ VALUES ('$job_name', '$id', '$company_name', '$company_address', '$company_logo', '$descrip')";
  $result=mysqli_query($conn,$sql);
 
  if($result){
@@ -29,7 +35,7 @@ if(isset($_POST['submit'])){
  }
  else{
    $_SESSION['status'] = "Job not added successfully";
-   header("Location:joblist.php");
+   header("Location:postjob.php");
 
  }
 }
@@ -94,7 +100,9 @@ if(isset($_POST['submit'])){
                </li>
                
                <li class="menu-item menu-item-has-children">
-                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+               <a href="#" data-toggle="sub-menu">
+                     Welcome, <?php echo $_SESSION['user_name']; ?>
+                     <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="logout.php">Logout</a></li>
                       <li class="menu-item"><a href="profile.php">Profile</a></li>
@@ -116,7 +124,7 @@ if(isset($_POST['submit'])){
         <p>
              "Empower your company's future by posting jobs on our website and handpicking the perfect candidate to shape success together. Your next great hire is just a click away."</p>
         <div class="banner-btn">
-          <a href="homepage.php"><span></span>Home</a>
+          <a href="admin.php"><span></span>Home</a>
           <a href="joblist.php"><span></span>Job Lists</a>
         </div>
       </div>
@@ -125,16 +133,6 @@ if(isset($_POST['submit'])){
      <div class="postbox">
 
       <?php
-      if(isset($_SESSION['status']) && $_SESSION != ''){
-      ?>
-         <div class="alert">
-          <strong>hey</strong><?php
-         echo $_SESSION['status'];
-         ?>
-        </div>
-        <?php
-         unset($_SESSION['status']);
-      }
 
       ?>
         
@@ -169,11 +167,13 @@ if(isset($_POST['submit'])){
              </div>
               <div class="inbox"> 
                <label>Company Description:</label><br>
-               <textarea id="description" name="des" rows="5" cols="60" > </textarea>
+               <textarea id="description" name="descrip" rows="5" cols="60" > </textarea>
              </div>
          
-            <!-- <button type="submit"  name="submit" value="Submit" class="submit1" >Submit</button> -->
-             <input type="submit" name="submit" class="submit1" value="Submit">
+            
+             <!-- <input type="submit" name="submit" class="submit1" value="Submit"> -->
+             <button type="submit" name="submit" value="Submit">Submit</button>
+             
              
         </form> 
 

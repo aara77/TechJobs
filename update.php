@@ -2,6 +2,7 @@
  <?php
 // Include the database connection file (e.g., connect.php)
 include("connect.php");
+session_start();
 
 // Check if the form is submitted for updating
 if(isset($_POST['update'])) {
@@ -16,7 +17,8 @@ if(isset($_POST['update'])) {
     $company_logo = $_FILES['company_logo']['name'];
     $company_logo_old = $_POST['company_logo_old'];
     $vacancy = $_POST['vacancy'];
-    $des = $_POST['des'];
+    $shift = $_POST['shift'];
+    $descrip= $_POST['descrip'];
 
     // Check if a new company logo is uploaded
     if(!empty($company_logo)) {
@@ -32,7 +34,7 @@ if(isset($_POST['update'])) {
     }
 
     // Update the job record in the database
-    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address',vacancy='$vacancy', des='$des' WHERE job_id=$job_id";
+    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address',vacancy='$vacancy', shift='$shift', descrip='$descrip' WHERE job_id=$job_id";
 
     if(mysqli_query($conn, $sql)) {
         // Redirect to the profile page after successful update
@@ -112,7 +114,9 @@ if(isset($_GET['job_id'])) {
                </li>
                
                <li class="menu-item menu-item-has-children">
-                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+               <a href="#" data-toggle="sub-menu">
+                     Welcome, <?php echo $_SESSION['user_name']; ?>
+                     <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="logout.php">Logout</a></li>
                       <li class="menu-item"><a href="profile.php">Profile</a></li>
@@ -156,19 +160,15 @@ if(isset($_GET['job_id'])) {
                  -->
              <div class="inbox">
                <label>Vacancy:</label>
-               <input type="number" name="vacancy" value="<?php echo $row['company_address'];  ?>" required><br>
+               <input type="text" name="vacancy" value="<?php echo $row['vacancy'];  ?>"><br>
              </div>
              <div class="inbox">
                <label>Job Nature:</label>
-               <input type="text" name="caddress" required><br>
-             </div>
-             <div class="inbox">
-               <label>Date Line:</label>
-               <input type="date" name="caddress" required><br>
+               <input type="text" name="shift" value="<?php echo $row['shift'];  ?>"><br>
              </div>
              <div class="inbox"> 
                <label>Company Description:</label><br>
-               <textarea id="description" name="des" rows="5" cols="60" > </textarea>
+               <textarea id="description" name="descrip" rows="5" cols="60" value="<?php echo $row['descrip'];  ?>"> </textarea>
              </div>
              
              <!-- <input type="reset" name="update" class="submit" value="Update"> -->
