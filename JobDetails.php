@@ -156,10 +156,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Job's Decription</h1>
         <div class="info">
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Post: <span class="bold-job-name"><?php echo $row['job_name']; ?></span></li>
-          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Published On:</li>
-          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Vacancy: 123 Position</li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Published On: <?php echo $row['published']; ?></li>
+          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Vacancy: <?php echo $row['vacancy']; ?></li>
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Job Nature: <?php echo $row['shift']; ?></li>
-          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Date Line: 01 Jan, 2045</li>
+          <!-- <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Date Line: 01 Jan, 2045</li> -->
         </div>
       </div>
     </div>

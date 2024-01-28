@@ -1,10 +1,28 @@
 <?php
-
 include 'connect.php';
- $query = "select * from job_list ";
- $result = mysqli_query($conn,$query);
+session_start();
 
-?>
+ $user = $_SESSION['user_name'];
+  $query1 = mysqli_query($conn,"SELECT * FROM registered_datas WHERE username = '$user'");
+ $row1 = mysqli_fetch_array($query1);
+ $id = $row1['user_id'];
+
+ 
+ $query = "SELECT * FROM job_list WHERE user_id =$id ";
+ $result = mysqli_query($conn,$query);
+ $rowcount = mysqli_num_rows($result);
+ ?>
+
+ <!-- <php
+ for($i=1; $i<=$rowcount; $i++){
+  $row = mysqli_fetch_array($result);
+
+ ?>
+
+ <?php
+
+ 
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,14 +80,16 @@ include 'connect.php';
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="joblist.php">View Jobs</a></li>
-                      <li class="menu-item"><a href="#">Post Jobs</a></li>
+                      <li class="menu-item"><a href="postjob.php">Post Jobs</a></li>
                   </ul>
                </li>
                <li class="menu-item">
                   <a href="#">News</a>
                </li>
                <li class="menu-item menu-item-has-children">
-                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+               <a href="#" data-toggle="sub-menu">
+                     Welcome, <?php echo $_SESSION['user_name']; ?>
+                     <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="logout.php">Logout</a></li>
                       <li class="menu-item"><a href="profile.php">Profile</a></li>
@@ -90,18 +110,13 @@ include 'connect.php';
                    <a href="postjob.php" class="btn float-end">Add Job</a>
                </h1>
                 <div class="browser-container">
-            
-            
-           <?php
-           if(isset($_GET['delete_msg'])){
-            echo "<h2>".$_GET['delete_msg']."</h2>";
-           }
-
-           ?>
  
                       <?php
-                       if(mysqli_num_rows($result)>0){
-                         while($row = mysqli_fetch_assoc($result)){
+                     //   if(mysqli_num_rows($result)>0){
+                     //     while($row = mysqli_fetch_assoc($result)){
+                           
+                     for($i=1; $i<=$rowcount; $i++){
+                       $row = mysqli_fetch_array($result);
                       ?> 
            
                       <div class="box">
@@ -121,7 +136,8 @@ include 'connect.php';
                       </div>
                       <?php
                          }
-                         }
+                         
+                        
                       ?>
                 </div>
                  <!-- <a href="joblist.php" class="btn">Browse more jobs</a> -->
