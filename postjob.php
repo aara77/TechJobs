@@ -69,7 +69,7 @@ if(isset($_POST['submit'])){
     <div class="container">
        <div class="header-main">
           <div class="logo">
-             <a href="homepage.php">TECHJobs</a>
+             <a href="admin.php">TECHJobs</a>
           </div>
           <div class="open-nav-menu">
              <span></span>

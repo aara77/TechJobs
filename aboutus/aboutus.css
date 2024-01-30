@@ -293,6 +293,9 @@ a{
     background-size: 5px 5px;
 }
 
+.team{
+	margin-top:5rem;
+}
 .team-member {
     margin-bottom: 20px;
     padding: 10px;
@@ -331,7 +334,12 @@ a{
 	padding-left: 1.5rem;
   }
   .mb-4 {
+	margin-top: 9rem;
     margin-bottom: 1.5rem !important
+}
+
+.mb-3{
+	margin-top: 2rem;
 }
   
   .text-truncate {

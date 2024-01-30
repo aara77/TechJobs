@@ -13,16 +13,6 @@ session_start();
  $rowcount = mysqli_num_rows($result);
  ?>
 
- <!-- <php
- for($i=1; $i<=$rowcount; $i++){
-  $row = mysqli_fetch_array($result);
-
- ?>
-
- <?php
-
- 
-?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +47,7 @@ session_start();
     <div class="container">
        <div class="header-main">
           <div class="logo">
-             <a href="#">TechJobs</a>
+             <a href="admin.php">TechJobs</a>
           </div>
           <div class="open-nav-menu">
              <span></span>
@@ -71,7 +61,7 @@ session_start();
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                              <a href="homepage.php">Home</a>
+                              <a href="admin.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>
@@ -130,6 +120,8 @@ session_start();
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
+                             
+                             <a href="view.php?job_id=<?php echo $row['job_id']; ?>" class="button0">View</a>
                              <a href="update.php?job_id=<?php echo $row['job_id']; ?>" class="button1">Update</a>
                              <a href="delete.php?deleteId=<?php echo $row['job_id']; ?>" class="button2">Delete</a>
                                <!-- <a href="" class="button">Apply Now</a> -->
