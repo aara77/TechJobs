@@ -18,39 +18,32 @@ if (isset($_GET['jobId'])) {
 echo "Job ID not provided.";
 }
 mysqli_close($conn); 
-?>
 
-<?php
-include 'connect.php';
 
+
+// // for apply
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    
-    // Process file upload
-    $cvFileName = $_FILES['cv']['name'];
-    $cvTmpName = $_FILES['cv']['tmp_name'];
-    $cvFileSize = $_FILES['cv']['size'];
-    $cvFileType = $_FILES['cv']['type'];
-    $cvContent = file_get_contents($cvTmpName);
-    
-    $coverLetter = $_POST['coverLetter'];
-    
-    // Prepare and execute SQL query
-    $stmt = $conn->prepare("INSERT INTO apply_job (name, email, cv, cover_letter) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssbs", $name, $email, $cvContent, $coverLetter);
-    
-    if ($stmt->execute()) {
-        echo "Application submitted successfully";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-    
-    // Close statement and connection
-    $stmt->close();
-    $conn->close();
+  // Collect form data
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $cv = $_FILES['cv']['name'];
+  $coverletter = $_POST['coverletter'];
+  
+  // Prepare and execute SQL query
+  $sql = "INSERT INTO apply_job(name, email, cv , coverletter) 
+           VALUES ('$name', '$email', '$cv', '$coverletter')";
+  $result = mysqli_query($conn, $sql);
+
+  if($result){
+    move_uploaded_file($_FILES["cv"]["tmp_name"],"image/".$_FILES['cv']['name']);
+ 
+    echo "Applied";
+  }
+  else{
+    echo "error";
+  }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -175,10 +168,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="cv">Your CV (PDF, DOCX):</label>
         <input type="file" id="cv" name="cv" accept=".pdf, .docx" required>
 
-        <label for="coverLetter">Cover Letter:</label>
-        <textarea id="coverLetter" name="coverLetter" required></textarea>
+        <label for="coverletter">Cover Letter:</label>
+        <textarea id="coverletter" name="coverletter" required></textarea>
 
-        <button type="submit">Submit Application</button>
+        <button type="submit" name="submit">Submit Application</button>
     </form>
     </div>
   </div>

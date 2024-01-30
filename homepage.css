@@ -672,6 +672,18 @@ border: none;
   position: absolute;
 }
 
+.button0{
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 670px;
+  cursor: pointer;
+  background-color: #774d97;
+  position: absolute;
+}
+
 
 
 
