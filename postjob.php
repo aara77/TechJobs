@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 //  $company_logo=mysqli_real_escape_string($conn,$company_logo);
  $descrip=$_POST['descrip'];
 
- $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,descrip)
+ $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,des)
  VALUES ('$job_name', '$id', '$company_name', '$company_address', '$company_logo', '$descrip')";
  $result=mysqli_query($conn,$sql);
 
@@ -172,7 +172,7 @@ if(isset($_POST['submit'])){
          
             
              <!-- <input type="submit" name="submit" class="submit1" value="Submit"> -->
-             <button type="submit" name="submit" value="Submit">Submit</button>
+             <input type="submit" name="submit" value="Submit">
              
              
         </form> 

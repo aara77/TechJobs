@@ -40,8 +40,6 @@ session_start();
     <title>TechJobs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
     <style>
         h2{
@@ -71,7 +69,7 @@ session_start();
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                              <a href="homepage.php">Home</a>
+                              <a href="admin.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>

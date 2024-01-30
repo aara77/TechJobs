@@ -1,16 +1,14 @@
 <?php
- 
+
 include 'connect.php';
- $query = "select * from job_list";
- $result = mysqli_query($conn,$query);
+session_start();
 
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -19,23 +17,19 @@ include 'connect.php';
     fontawesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="joblist.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="view.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
-
-    <title>JobList</title>
+    <title>TechJobs</title>
 </head>
-
 <body>
-  <!-- header start -->
+     <!-- header start -->
   <header class="header">
     <div class="container">
        <div class="header-main">
           <div class="logo">
-             <a href="admin.php">TECHJobs</a>
+             <a href="homepage.php">TECHJobs</a>
           </div>
           <div class="open-nav-menu">
              <span></span>
@@ -66,7 +60,9 @@ include 'connect.php';
                </li>
                
                <li class="menu-item menu-item-has-children">
-                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+               <a href="#" data-toggle="sub-menu">
+                     Welcome, <?php echo $_SESSION['user_name']; ?>
+                     <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="logout.php">Logout</a></li>
                       <li class="menu-item"><a href="profile.php">Profile</a></li>
@@ -80,53 +76,9 @@ include 'connect.php';
  </header>
  <script src="homepage.js"></script>
  <!-- header end -->
+    <div class="mainbody">
 
- <div class="mainbody">
- <div class="containerr">
-    <section id="banner1">
-      <div class="banner1-txt">
-        <h1>Job Lists</h1>
-        <p>Choose a job that fuels your passion and watch your daily efforts turn into a fulfilling journey.</p>
-        <div class="banner-btn">
-          <a href="homepage.php"><span></span>Home</a>
-          <a href="postjob.php"><span></span>Post Job</a>
-        </div>
-      </div>
-    </section>
     </div>
-        <!--new job start-->
-        <div class="browser">
-           <h1 class="heading">New Jobs</h1>
-               <div class="browser-container">
-
-                     <?php
-                      if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_assoc($result)){
-                     ?> 
-         
-                  <div class="box">
-                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                    <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 80px; height: 80px;">
-                              <div class="text-start ps-4">  
-                             <h3><?php echo $row['job_name']; ?></h3>
-                             <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
-                             <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
-                         </div>
-                         <a href="JobDetails.php?jobId=<?php echo $row['job_id']; ?>" class="button">Apply Now</a>
-                           <!-- <a href="" class="button">Apply Now</a> -->
-                    </div>
-                  </div>
-                     <?php
-                        }
-                        }
-                     ?>
-
-                    
-                </div>
-            </div>
-             <!--new job endss-->
-   </div>
-
 
 <!--footer section start-->
 <footer>
@@ -175,6 +127,5 @@ include 'connect.php';
     </div>   
 </footer>
 <!---footer section ends-->
-
 </body>
 </html>

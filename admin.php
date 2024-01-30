@@ -48,7 +48,7 @@ include 'connect.php';
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                  <a href="homepage.php">Home</a>
+                  <a href="admin.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>

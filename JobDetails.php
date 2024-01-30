@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Company's Decription</h1>
         <div class="companylogo">
           
-        <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>"alt="img" style="width: 180px; height: 180px; margin-left:50px;">
+        <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>" alt="img" style="width: 180px; height: 180px; margin-left:50px;">
                         <!--img src="img\eb pearls.png" alt=""-->
         </div>
         <div class="details">
