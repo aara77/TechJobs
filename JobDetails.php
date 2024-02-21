@@ -1,6 +1,7 @@
 <?php
 
 include 'connect.php';
+session_start();
 // Fetch data from the database based on the provided job ID
 if (isset($_GET['jobId'])) {
   $jobId = $_GET['jobId'];
@@ -17,7 +18,7 @@ if (isset($_GET['jobId'])) {
 } else {
 echo "Job ID not provided.";
 }
-mysqli_close($conn); 
+// mysqli_close($conn); 
 
 
 
@@ -30,20 +31,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $coverletter = $_POST['coverletter'];
   
   // Prepare and execute SQL query
-  $sql = "INSERT INTO apply_job(name, email, cv , coverletter) 
-           VALUES ('$name', '$email', '$cv', '$coverletter')";
+  $sql = "INSERT INTO apply_job(name, email, cv , cover_letter, job_id) 
+           VALUES ('$name', '$email', '$cv', '$coverletter',$jobId)";
   $result = mysqli_query($conn, $sql);
 
-  if($result){
-    move_uploaded_file($_FILES["cv"]["tmp_name"],"image/".$_FILES['cv']['name']);
- 
-    echo "Applied";
-  }
-  else{
-    echo "error";
+  // Check for SQL errors
+if (!$result) {
+  echo "Error: " . mysqli_error($conn);
+} else {
+  // Upload file if the query was successful
+  $uploadFolder = "uploads/";
+  $destination = $uploadFolder . $_FILES["cv"]["name"];
+  
+  if (move_uploaded_file($_FILES["cv"]["tmp_name"], $destination)) {
+      echo "Applied";
+  } else {
+      echo "Error uploading file.";
   }
 }
-
+}
+mysqli_close($conn); 
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +110,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <a href="#">News</a>
                </li>
                <li class="menu-item menu-item-has-children">
-                  <a href="#" data-toggle="sub-menu">Welcome <i class="plus"></i></a>
+                  <a href="#" data-toggle="sub-menu">
+                    Welcome, <?php echo $_SESSION['user_name']; ?>
+                    <i class="plus"></i></a>
                   <ul class="sub-menu">
                       <li class="menu-item"><a href="logout.php">Logout</a></li>
                       <li class="menu-item"><a href="profile.php">Profile</a></li>
@@ -158,7 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <h1 class="heading">Apply Now</h1>
     <div class="container3">
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required>
 

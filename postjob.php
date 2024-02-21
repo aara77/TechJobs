@@ -21,9 +21,11 @@ if(isset($_POST['submit'])){
 //  $company_logo=base64_encode(file_get_contents($_FILES['company_logo']["tmp_name"]));
 //  $company_logo=mysqli_real_escape_string($conn,$company_logo);
  $descrip=$_POST['descrip'];
+ $vacancy=$_POST['vacancy'];
+ $shift=$_POST['shift'];
 
- $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,des)
- VALUES ('$job_name', '$id', '$company_name', '$company_address', '$company_logo', '$descrip')";
+ $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,des,vacancy,shift)
+ VALUES ('$job_name', '$id', '$company_name', '$company_address', '$company_logo', '$descrip', '$vacancy','$shift')";
  $result=mysqli_query($conn,$sql);
 
  if($result){

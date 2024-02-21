@@ -54,8 +54,8 @@ include 'connect.php';
                <li class="menu-item menu-item-has-children">
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
                   <ul class="sub-menu">
-                      <li class="menu-item"><a href="#">View Jobs</a></li>
-                      <li class="menu-item"><a href="#">Post Jobs</a></li>
+                      <li class="menu-item"><a href="login/login.php">View Jobs</a></li>
+                      <li class="menu-item"><a href="login/login.php">Post Jobs</a></li>
                   </ul>
                </li>
                <li class="menu-item">
@@ -116,7 +116,7 @@ include 'connect.php';
                          }
                       ?>
                 </div>
-                 <a href="joblist.php" class="btn">Browse more jobs</a>
+                 <a href="login/login.php" class="btn">Browse more jobs</a>
              </div>
            </div>
             <!--new job endss-->

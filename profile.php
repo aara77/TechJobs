@@ -95,7 +95,7 @@ session_start();
             <!--update/delete start-->
             <div class="browser">
                
-               <h1 class="heading">jobs
+               <h1 class="heading">jobs 
                    <a href="postjob.php" class="btn float-end">Add Job</a>
                </h1>
                 <div class="browser-container">
