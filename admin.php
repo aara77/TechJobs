@@ -190,7 +190,7 @@ include 'connect.php';
        <h4>For Employer</h4>
        <ul>
           <li><a href="login/login.php">Register</a></li>
-          <li><a href="#">Post a Job</a></li>
+          <li><a href="postjob.php">Post a Job</a></li>
           <li><a href="/login/login.php">Login</a></li>
           <li><a href="#">FAQ</a></li>
        </ul>
@@ -199,7 +199,7 @@ include 'connect.php';
     <div class="footer-col">
       <h4>About Us</h4>
       <ul>
-         <li><a href="/aboutus/aboutus.html">About TechJob</a></li>
+         <li><a href="aboutus/aboutus.php">About TechJob</a></li>
          <li><a href="#">Life at TechJob</a></li>
          <li><a href="#">Blogs</a></li>
          <li><a href="#">FAQs</a></li>

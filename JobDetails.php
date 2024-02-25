@@ -148,7 +148,7 @@ mysqli_close($conn);
     <div class="container2">
     
       <div class="box1">
-        <h1>Company's Decription</h1>
+        <h1 >Company's Decription</h1>
         <div class="companylogo">
           
         <img class ="img-fluid border rounded" img src= "<?php echo "image/".$row['company_logo']; ?>" alt="img" style="width: 180px; height: 180px; margin-left:50px;">
@@ -160,10 +160,10 @@ mysqli_close($conn);
         </div>
       </div>
       <div class="box2">
-        <h1>Job's Decription</h1>
+        <h1 style="margin-bottom: 50px;">Job's Decription</h1>
         <div class="info">
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Post: <span class="bold-job-name"><?php echo $row['job_name']; ?></span></li>
-          <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Published On: <?php echo $row['published']; ?></li>
+          <!-- <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Published On: <?php echo $row['published']; ?></li> -->
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Vacancy: <?php echo $row['vacancy']; ?></li>
           <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Job Nature: <?php echo $row['shift']; ?></li>
           <!-- <li><i class="fa-solid fa-chevron-right" style="color: #692782;"></i> Date Line: 01 Jan, 2045</li> -->
@@ -200,9 +200,9 @@ mysqli_close($conn);
     <div class="footer-col">
       <h4>For Jobseeker</h4>
       <ul>
-        <li><a href="/login/login.html">Register</a></li>
+        <li><a href="/login/login.php">Register</a></li>
         <li><a href="#">Search Jobs</a></li>
-        <li><a href="/login/login.html">Login</a></li>
+        <li><a href="/login/login.php">Login</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
     </div>
@@ -210,9 +210,9 @@ mysqli_close($conn);
     <div class="footer-col">
       <h4>For Employer</h4>
       <ul>
-        <li><a href="/login/login.html">Register</a></li>
-        <li><a href="#">Post a Job</a></li>
-        <li><a href="/login/login.html">Login</a></li>
+        <li><a href="/login/login.php">Register</a></li>
+        <li><a href="postjob.php">Post a Job</a></li>
+        <li><a href="/login/login.php">Login</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
     </div>
@@ -220,7 +220,7 @@ mysqli_close($conn);
     <div class="footer-col">
       <h4>About Us</h4>
       <ul>
-        <li><a href="/aboutus/aboutus.html">About TechJob</a></li>
+        <li><a href="/aboutus/aboutus.php">About TechJob</a></li>
         <li><a href="#">Life at TechJob</a></li>
         <li><a href="#">Blogs</a></li>
         <li><a href="#">FAQs</a></li>

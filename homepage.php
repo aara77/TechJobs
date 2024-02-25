@@ -189,7 +189,7 @@ include 'connect.php';
     <div class="footer-col">
       <h4>About Us</h4>
       <ul>
-        <li><a href="/aboutus/aboutus.html">About TechJob</a></li>
+        <li><a href="/aboutus/aboutus.php">About TechJob</a></li>
         <li><a href="#">Life at TechJob</a></li>
         <li><a href="#">Blogs</a></li>
         <li><a href="#">FAQs</a></li>

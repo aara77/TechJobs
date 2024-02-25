@@ -1,3 +1,10 @@
+<?php
+include 'connect.php';
+//  $result = mysqli_query($conn,$query);
+ session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +41,7 @@
             </div>
             <ul class="menu">
                <li class="menu-item menu-item-has-children">
-                  <a href="Techjobs/homepage.php">Home</a>
+                  <a href="homepage.php">Home</a>
                </li>
                <li class="menu-item">
                   <a href="aboutus/aboutus.html">About</a>
@@ -49,8 +56,15 @@
                <li class="menu-item">
                   <a href="#">News</a>
                </li>
-               <li class="menu-item">
-                  <a href="/login/login.html">Login/Register</a>
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">
+                     Welcome, <?php echo $_SESSION['user_name']; ?>
+                     <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="logout.php">Logout</a></li>
+                      <li class="menu-item"><a href="profile.php">Profile</a></li>
+                      <!-- <li class="menu-item"><a href="Profile.php?jobId=<?php echo $row['job_id']; ?>">Profile</a></li> -->
+                  </ul>
                </li>
             </ul>
           </nav>
@@ -153,7 +167,7 @@
     <div class="footer-col">
       <h4>About Us</h4>
       <ul>
-         <li><a href="/aboutus/aboutus.html">About TechJob</a></li>
+         <li><a href="/aboutus/aboutus.php">About TechJob</a></li>
          <li><a href="#">Life at TechJob</a></li>
          <li><a href="#">Blogs</a></li>
          <li><a href="#">FAQs</a></li>

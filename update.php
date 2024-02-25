@@ -186,53 +186,6 @@ if(isset($_GET['job_id'])) {
       </div>
 </div>
 
-<!--footer section start-->
-<footer>
-    <div class="footer-col">
-            <h1>Tech<span>Jobs</span></h1>
-            <!-- <p>Get job easily</p> -->
-    </div>
-
-    <div class="footer-col">
-       <h4>For Jobseeker</h4>
-        <ul>
-           <li><a href="/login/login.html">Register</a></li>
-           <li><a href="#">Search Jobs</a></li>
-           <li><a href="/login/login.html">Login</a></li>
-           <li><a href="#">FAQ</a></li>
-        </ul>          
-    </div>       
-
-    <div class="footer-col">
-       <h4>For Employer</h4>
-       <ul>
-          <li><a href="/login/login.html">Register</a></li>
-          <li><a href="#">Post a Job</a></li>
-          <li><a href="/login/login.html">Login</a></li>
-          <li><a href="#">FAQ</a></li>
-       </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>About Us</h4>
-      <ul>
-         <li><a href="/aboutus/aboutus.html">About TechJob</a></li>
-         <li><a href="#">Life at TechJob</a></li>
-         <li><a href="#">Blogs</a></li>
-         <li><a href="#">FAQs</a></li>
-      </ul> 
-    </div>
-
-    <div class="footer-col">
-       <h4>Follow us</h4>
-       <div class="links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-        </div>
-    </div>   
-</footer>
-<!---footer section ends-->
 
 </body>
 </html>
