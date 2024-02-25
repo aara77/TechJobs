@@ -1,9 +1,36 @@
-<?php
+ <?php
 
 include 'connect.php';
 session_start();
 
-?>
+$jobId = $_SESSION['job_id'];
+$query1 = mysqli_query($conn,"SELECT * FROM job_list WHERE job_id = '$jobId'");
+$row1 = mysqli_fetch_array($query1);
+$id = $row1['job_id'];
+
+
+$query = "SELECT * FROM apply_job WHERE job_id =$id ";
+$result = mysqli_query($conn,$query);
+$rowcount = mysqli_num_rows($result);
+
+// if (isset($_GET['job_id'])) {
+//    $jobId = $_GET['job_id'];
+ 
+//    $query = "SELECT * FROM apply_job WHERE job_id = $jobId"; // Adjust the table name and columns accordingly
+//    $result = mysqli_query($conn, $query);
+
+   
+//    if(!$result) {
+//       die("Query failed: " . mysqli_error($conn));
+//   } else {
+//       $row = mysqli_fetch_assoc($result);
+//   }
+// }
+
+
+
+
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,6 +113,7 @@ session_start();
       <h2 class="headinga">view applicants and their informations</h2>
       <div class="view-table">
          <table>
+ 
             <thead>
                <tr>
                   <th>SN</th>
@@ -94,11 +122,19 @@ session_start();
                   <th>CV</th>
                </tr>
             </thead>
-            <tbody>
+             <tbody>
+               
+             <?php
+                     //   if(mysqli_num_rows($result)>0){
+                     //     while($row = mysqli_fetch_assoc($result)){
+                           
+                     for($i=1; $i<=$rowcount; $i++){
+                       $row = mysqli_fetch_array($result);
+                      ?> 
                <tr>
-                  <td>1</td>
-                  <td>john</td>
-                  <td>john.doe@example.com</td>
+                  <td> <?php echo $row['company_name']; ?></td>
+                  <td> <?php echo $row['name']; ?></td>
+                  <td> <?php echo $row['email']; ?></td>
                   <td><a href="">[Link to CV #1]</a></td>
                </tr>
                <tr>
@@ -107,7 +143,11 @@ session_start();
                   <td>jane.smith@example.com</td>
                   <td>[Link to CV #2]</td>
                </tr>
+               <?php
+                     }
+                     ?>
             </tbody>
+         
          </table>
       </div>
    </div>

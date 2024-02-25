@@ -95,7 +95,7 @@ session_start();
             <!--update/delete start-->
             <div class="browser">
                
-               <h1 class="heading">jobs 
+               <h1 class="heading" style="margin-top: -150px;" >jobs 
                    <a href="postjob.php" class="btn float-end">Add Job</a>
                </h1>
                 <div class="browser-container">
@@ -118,11 +118,9 @@ session_start();
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
-                             
-                             <a href="view.php?job_id=<?php echo $row['job_id']; ?>" class="button0">View</a>
-                             <a href="update.php?job_id=<?php echo $row['job_id']; ?>" class="button1">Update</a>
-                             <a href="delete.php?deleteId=<?php echo $row['job_id']; ?>" class="button2">Delete</a>
-                               <!-- <a href="" class="button">Apply Now</a> -->
+                               <a href="view.php?job_id=<?php echo $row['job_id']; ?>" class="button0">View</a>
+                               <a href="update.php?job_id=<?php echo $row['job_id']; ?>" class="button1">Update</a>
+                               <a href="delete.php?deleteId=<?php echo $row['job_id']; ?>" class="button2">Delete</a>   
                         </div>
                       </div>
                       <?php

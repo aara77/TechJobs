@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
  $vacancy=$_POST['vacancy'];
  $shift=$_POST['shift'];
 
- $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,des,vacancy,shift)
+ $sql="INSERT INTO job_list(job_name,user_id, company_name,company_address,company_logo,descrip,vacancy,shift)
  VALUES ('$job_name', '$id', '$company_name', '$company_address', '$company_logo', '$descrip', '$vacancy','$shift')";
  $result=mysqli_query($conn,$sql);
 
@@ -153,11 +153,11 @@ if(isset($_POST['submit'])){
              </div>
              <div class="inbox">
                <label>Vacancy:</label>
-               <input type="number" name="vacancy" required><br>
+               <input type="number" name="vacancy" ><br>
              </div> 
              <div class="inbox">
                <label>Job Nature:</label>
-               <input type="text" name="shift" required><br>
+               <input type="text" name="shift"><br>
              </div>
              <div class="inbox">
                <!--<label>Date Line:</label>

@@ -2,6 +2,8 @@
 
 include 'connect.php';
 session_start();
+
+ 
 // Fetch data from the database based on the provided job ID
 if (isset($_GET['jobId'])) {
   $jobId = $_GET['jobId'];
@@ -31,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $coverletter = $_POST['coverletter'];
   
   // Prepare and execute SQL query
-  $sql = "INSERT INTO apply_job(name, email, cv , cover_letter, job_id) 
-           VALUES ('$name', '$email', '$cv', '$coverletter',$jobId)";
+  $sql = "INSERT INTO apply_job(name, email, cv , coverletter, job_id) 
+           VALUES ('$name', '$email', '$cv', '$coverletter', '$jobId')";
   $result = mysqli_query($conn, $sql);
 
   // Check for SQL errors
@@ -45,8 +47,11 @@ if (!$result) {
   
   if (move_uploaded_file($_FILES["cv"]["tmp_name"], $destination)) {
       echo "Applied";
+      header("Location:joblist.php");
+
   } else {
       echo "Error uploading file.";
+      header("Location:JobDetails.php");
   }
 }
 }

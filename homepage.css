@@ -211,9 +211,9 @@ a{
 
 @media(max-width: 991px){
 	.header .menu-overlay.active{
-	visibility: visible;
-	opacity: 1;
-}
+	   visibility: visible;
+	   opacity: 1;
+  }
 	.header .nav-menu{
 		position: fixed;
 		right: -280px;
@@ -501,6 +501,16 @@ a{
   position: absolute;
 }
 
+@media(max-width: 991px){
+  .browser .browser-container .box .button {
+    
+  padding: 10px 22px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 450px;
+  }
+  }
+
 .browser .browser-container .box:hover{
   transform: scale(1.);
   z-index: 1;
@@ -566,6 +576,13 @@ border: none;
   background-color: #662d91;
   position: absolute;
 }
+@media(max-width: 991px){
+  .browser .btn {
+    margin: 40px 30px 0 320px;
+    padding: 19px 32px;
+  }
+  }
+  
 
 /* new job ends */
 
@@ -648,6 +665,7 @@ border: none;
 /* whyus ends */
  
 /*update/delete start */
+
 .button2{
   border: none;
   color: white;
@@ -684,7 +702,32 @@ border: none;
   position: absolute;
 }
 
+@media(max-width: 991px){
+  .button0 {
+  padding: 10px 22px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 350px;
+  }
+}
 
+@media(max-width: 991px){
+  .button1 {
+  padding: 10px 22px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 450px;
+  }
+}
+
+@media(max-width: 991px){
+  .button2 {
+  padding: 10px 22px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 50px 0 550px;
+  }
+}
 
 
 /* footer start */

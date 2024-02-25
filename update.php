@@ -34,7 +34,8 @@ if(isset($_POST['update'])) {
     }
 
     // Update the job record in the database
-    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address',vacancy='$vacancy', shift='$shift', descrip='$descrip' WHERE job_id=$job_id";
+    $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address',vacancy='$vacancy', shift='$shift', descrip='$descrip' 
+            WHERE job_id=$job_id";
 
     if(mysqli_query($conn, $sql)) {
         // Redirect to the profile page after successful update
@@ -138,7 +139,7 @@ if(isset($_GET['job_id'])) {
 
  <div class="mainbody">
   
-     <h1 class="heading"> Post A Job </h1>
+     <h1 class="heading"> Update A Job </h1>
      <div class="postbox">
 
         <form action="update.php?job_id=<?php echo $job_id; ?>" method="POST" enctype ="multipart/form-data">
