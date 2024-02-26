@@ -11,6 +11,9 @@ if (isset($_POST['rsubmit'])){
   if(!$rresult){
     echo "data insertion problem";
   }
+  else{
+    echo "Registered Successfully";
+  }
 }
 if (isset($_POST['lsubmit'])){
 
@@ -24,6 +27,7 @@ if (isset($_POST['lsubmit'])){
   if($num==1){
     session_start();
     $_SESSION['user_name']=$lusername;
+    $_SESSION['status']= "Login Successful";
     $_SESSION['login']=true;
     header('location:\TechJobs\admin.php');
   

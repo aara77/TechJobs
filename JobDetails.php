@@ -20,8 +20,6 @@ if (isset($_GET['jobId'])) {
 } else {
 echo "Job ID not provided.";
 }
-// mysqli_close($conn); 
-
 
 
 // // for apply
@@ -46,11 +44,11 @@ if (!$result) {
   $destination = $uploadFolder . $_FILES["cv"]["name"];
   
   if (move_uploaded_file($_FILES["cv"]["tmp_name"], $destination)) {
-      echo "Applied";
+      $_SESSION['status'] = "Applied Successfully";
       header("Location:joblist.php");
 
   } else {
-      echo "Error uploading file.";
+      $_SESSION['status'] = "Error";
       header("Location:JobDetails.php");
   }
 }

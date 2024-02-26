@@ -51,7 +51,7 @@ include 'connect.php';
                   <a href="admin.php">Home</a>
                </li>
                <li class="menu-item">
-                  <a href="aboutus/aboutus.html">About</a>
+                  <a href="aboutus/aboutus.php">About</a>
                </li>
                <li class="menu-item menu-item-has-children">
                   <a href="#" data-toggle="sub-menu">Jobs <i class="plus"></i></a>
@@ -91,6 +91,18 @@ include 'connect.php';
             <div class="banner-button">
                 <a href="joblist.php"><span></span>View Jobs</a>
                 <a href="postjob.php"><span></span>Post Jobs</a>
+                
+                <?php
+                        if(isset($_SESSION['status']))
+                        {
+                            ?>
+                                <div class="alert" style=" font-size: 20px; color: #662d91; ">
+                                  <strong >  <?= $_SESSION['status']; ?> </strong>
+                                </div>
+                            <?php 
+                            unset($_SESSION['status']);
+                        }
+                        ?>
             </div>
         </div>
     </section>
@@ -144,7 +156,7 @@ include 'connect.php';
                        <p>Easier to navigate through job listings
                            and manage your job search.
                        </p>
-                   </div>
+                    </div>
                
                    <div class="boxs">
                        <div class="font">

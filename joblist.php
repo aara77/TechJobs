@@ -104,6 +104,15 @@ session_start();
                <div class="browser-container">
 
                      <?php
+                     if(isset($_SESSION['status']))
+                     {
+                         ?>
+                             <div class="alert" style=" font-size: 20px; color: #662d91; ">
+                               <strong >  <?= $_SESSION['status']; ?> </strong>
+                             </div>
+                         <?php 
+                         unset($_SESSION['status']);
+                     }
                       if(mysqli_num_rows($result)>0){
                         while($row = mysqli_fetch_assoc($result)){
                      ?> 

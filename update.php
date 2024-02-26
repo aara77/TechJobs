@@ -1,6 +1,5 @@
 
  <?php
-// Include the database connection file (e.g., connect.php)
 include("connect.php");
 session_start();
 
@@ -20,18 +19,18 @@ if(isset($_POST['update'])) {
     $shift = $_POST['shift'];
     $descrip= $_POST['descrip'];
 
-    // Check if a new company logo is uploaded
-    if(!empty($company_logo)) {
-        // Upload the new company logo
-        $target_dir = "image/";
-        $target_file = $target_dir . basename($_FILES["company_logo"]["name"]);
-        move_uploaded_file($_FILES["company_logo"]["tmp_name"], $target_file);
-        // Use $company_logo as the updated logo filename
-        $update_filename = $company_logo;
-    } else {
-        // Use the existing logo filename
-        $update_filename = $company_logo_old;
-    }
+    // // Check if a new company logo is uploaded
+    // if(!empty($company_logo)) {
+    //     // Upload the new company logo
+    //     $target_dir = "image/";
+    //     $target_file = $target_dir . basename($_FILES["company_logo"]["name"]);
+    //     move_uploaded_file($_FILES["company_logo"]["tmp_name"], $target_file);
+    //     // Use $company_logo as the updated logo filename
+    //     $update_filename = $company_logo;
+    // } else {
+    //     // Use the existing logo filename
+    //     $update_filename = $company_logo_old;
+    // }
 
     // Update the job record in the database
     $sql = "UPDATE job_list SET job_name='$job_name', company_name='$company_name', company_address='$company_address',vacancy='$vacancy', shift='$shift', descrip='$descrip' 
@@ -40,6 +39,7 @@ if(isset($_POST['update'])) {
     if(mysqli_query($conn, $sql)) {
         // Redirect to the profile page after successful update
         header("Location: /Techjobs/profile.php");
+        $_SESSION['status']= "Job Updated Successfully";
         exit();
     } else {
         // Handle query errors

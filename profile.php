@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+
 session_start();
 
  $user = $_SESSION['user_name'];
@@ -101,24 +102,30 @@ session_start();
                 <div class="browser-container">
  
                       <?php
-                     //   if(mysqli_num_rows($result)>0){
-                     //     while($row = mysqli_fetch_assoc($result)){
-                           
+                        if(isset($_SESSION['status']))
+                        {
+                            ?>
+                                <div class="alert" style=" font-size: 20px; color: #662d91; ">
+                                  <strong >  <?= $_SESSION['status']; ?> </strong>
+                                </div>
+                            <?php 
+                            unset($_SESSION['status']);
+                        }
+                          
                      for($i=1; $i<=$rowcount; $i++){
                        $row = mysqli_fetch_array($result);
-                      ?> 
+                  ?> 
            
                       <div class="box">
                         <div class="col-sm-12 col-md-8 d-flex align-items-center">
-
-                             <!-- <img class="img-fluid border rounded"  echo '<img src ="data:comapany_logo;base64,' . base64_encode($row['company_logo']).'"  alt="" style="width: 80px; height: 80px;" '; ?>> -->
                              <img class ="img-fluid border rounded" img src= "image/<?php echo $row['company_logo']; ?>"alt="img" style="width: 80px; height: 80px;">
                              <div class="text-start ps-4">
                                  <h3><?php echo $row['job_name']; ?></h3>
                                  <span class="text-truncate me-3"><a><i class="fa fa-briefcase"></i></a>  <?php echo $row['company_name']; ?></span>
                                  <span class="text-truncate me-3"><a><i class="fa fa-map-marker-alt"></i></a><?php echo $row['company_address']; ?></span>
                              </div>
-                               <a href="view.php?job_id=<?php echo $row['job_id']; ?>" class="button0">View</a>
+                               <!-- <a href="view.php?job_id=<?php echo $row['job_id']; ?>" class="button0">View</a> -->
+                               <a href = "" class="button0" >View</a>
                                <a href="update.php?job_id=<?php echo $row['job_id']; ?>" class="button1">Update</a>
                                <a href="delete.php?deleteId=<?php echo $row['job_id']; ?>" class="button2">Delete</a>   
                         </div>

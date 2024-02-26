@@ -32,8 +32,8 @@ if(isset($_POST['submit'])){
    // echo "file uploaded";
    move_uploaded_file($_FILES["company_logo"]["tmp_name"],"image/".$_FILES['company_logo']['name']);
    
-   $_SESSION['status'] = "Job added successfully";
-   header("Location:joblist.php");
+   $_SESSION['status'] = "Job Added Successfully";
+   header("Location:profile.php");
  }
  else{
    $_SESSION['status'] = "Job not added successfully";
@@ -141,11 +141,11 @@ if(isset($_POST['submit'])){
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
             <div class="inbox">
                <label>Job Post:</label>
-               <input type="text" name="job_name" required autocomplete="off"><br>
+               <input type="text" name="job_name" required ><br>
              </div>
              <div class="inbox">
                <label>Company Name:</label>
-               <input type="text" name="company_name"  required autocomplete="off"><br>
+               <input type="text" name="company_name"  required ><br>
              </div>
              <div class="inbox">
                <label>Company Address:</label>
